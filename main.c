@@ -60,7 +60,7 @@ int main()
 
     while (programIsRunning == TRUE) {
         printf(">");
-
+        // Test Change (Remove this commeeent pls)
         // Mecanismo super complicado de input (TODO: Refactorizar)
         fgets(inputUser, sizeof(inputUser), stdin);
         // Newline does not exist
