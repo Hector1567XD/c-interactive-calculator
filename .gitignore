@@ -1,0 +1,15 @@
+*.swp
+.~
+thumbs.db
+*.o
+*.obj
+*.lib
+*.so
+*.dll
+*.exe
+a.out
+main
+*.layout
+*.depend
+bin/
+obj/
