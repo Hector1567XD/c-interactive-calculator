@@ -1,46 +1,51 @@
-#include "./include/pila.h"
+#ifndef pila_c
+    #define pila_c
 
-#include <stdio.h>
-#include <stdlib.h>
+    #include "./include/pila.h"
 
-Nodo* CrearNodo(int value)
-{
-    Nodo* nodo = (Nodo *) malloc(sizeof(Nodo));
-    nodo->value = value;
-    nodo->siguiente = NULL;
-    return nodo;
-}
+    #include <stdio.h>
+    #include <stdlib.h>
 
-Pila* CrearPila()
-{
-    Pila* pila = (Pila *) malloc(sizeof(Pila));
-    pila->cima = NULL;
-    return pila;
-}
-
-void DestruirNodo(Nodo* nodo)
-{
-    nodo->siguiente = NULL;
-    free(nodo);
-}
-
-void Apilar(Pila* pila, int value) {
-    Nodo* nodo = CrearNodo(value);
-    nodo->siguiente = pila->cima;
-    pila->cima = nodo;
-}
-
-void Desapilar(Pila* pila) {
-    if (pila->cima != NULL) {
-        Nodo* eliminar = pila->cima;
-        pila->cima = pila->cima->siguiente;
-        DestruirNodo(eliminar);
+    Nodo* CrearNodo(int value)
+    {
+        Nodo* nodo = (Nodo *) malloc(sizeof(Nodo));
+        nodo->value = value;
+        nodo->siguiente = NULL;
+        return nodo;
     }
-}
 
-int Cima(Pila* pila) {
-    if (pila->cima == NULL)
-        return NULL;
-    else
-        return pila->cima->value;
-}
+    Pila* CrearPila()
+    {
+        Pila* pila = (Pila *) malloc(sizeof(Pila));
+        pila->cima = NULL;
+        return pila;
+    }
+
+    void DestruirNodo(Nodo* nodo)
+    {
+        nodo->siguiente = NULL;
+        free(nodo);
+    }
+
+    void Apilar(Pila* pila, int value) {
+        Nodo* nodo = CrearNodo(value);
+        nodo->siguiente = pila->cima;
+        pila->cima = nodo;
+    }
+
+    void Desapilar(Pila* pila) {
+        if (pila->cima != NULL) {
+            Nodo* eliminar = pila->cima;
+            pila->cima = pila->cima->siguiente;
+            DestruirNodo(eliminar);
+        }
+    }
+
+    int Cima(Pila* pila) {
+        if (pila->cima == NULL)
+            return NULL;
+        else
+            return pila->cima->value;
+    }
+
+#endif /* pila_c */
