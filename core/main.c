@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "pila.h"
-#include "pila.c"
-
+#include "./include/commands.h"
+#include "../utils/include/pila.h"
+#include "../utils/pila.c"
 
 /*
     Primer prototipo xP
@@ -19,7 +19,6 @@
 
 const TRUE = 1;
 const FALSE = 0;
-const char* QUIT = "QUIT";
 
 /*int stringEqual(s1, s2) {
     return (strcmp(s, "-") == 0);
@@ -48,7 +47,7 @@ int isNumber(char s[])
 
 int isValidInput(char s[]) {
     if (isNumber(s)) return TRUE;
-    if (strcmp(s, QUIT) == 0) return TRUE;
+    if (strcmp(s, QUIT_COMMAND) == 0) return TRUE;
     return FALSE;
 }
 
@@ -79,7 +78,7 @@ int main()
             continue;
         }
 
-        if (strcmp(inputUser, QUIT) == 0)
+        if (strcmp(inputUser, QUIT_COMMAND) == 0)
         {
             programIsRunning = FALSE;
             break;

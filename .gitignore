@@ -13,3 +13,5 @@ main
 *.depend
 bin/
 obj/
+./core/main.exe
+./core/main.o
