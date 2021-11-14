@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "./include/errors.h"
+#include "../core/include/errors.h"
 
-void getInputedString(char *receiver, int max_length, int *error)
+void getInputed(char *receiver, int max_length, int *error)
 {
     char input[] = "";
     *error = NO_ERRORS;
