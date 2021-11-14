@@ -2,9 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "./include/commands.h"
 #include "../utils/include/pila.h"
 #include "../utils/pila.c"
+
+#include "./include/commands.h"
+#include "./include/errors.h"
+
+#include "./input-handler.c"
 
 /*
     Primer prototipo xP
@@ -54,39 +58,33 @@ int isValidInput(char s[]) {
 int main()
 {
     int programIsRunning = TRUE;
-    char inputUser[65] = "";
     Pila* pilaNumeros = CrearPila();
+    char input[65] = "";
+    int error = NO_ERRORS;
 
     while (programIsRunning == TRUE) {
+        error = NO_ERRORS;
         printf(">");
-        // Test Change (Remove this commeeent pls)
-        // Mecanismo super complicado de input (TODO: Refactorizar)
-        fgets(inputUser, sizeof(inputUser), stdin);
-        // Newline does not exist
-        if(!strchr(inputUser, '\n')) {
-            printf("Error: se ha ingresado mas caracteres de los permitidos\n");
-            printf("       solo se tomaran caracteres hasta el limite permitido (%d)\n", sizeof(inputUser) - 1);
-            while(fgetc(stdin)!='\n');  // Discard until newline
+
+        getInputedString(input, sizeof(input), &error);
+        if(error == INPUT_MAX_LENGTH_ERROR) {
+            printf("Error: se ha ingresado mas caracteres de los permitidos\n      solo se tomaran caracteres hasta el limite permitido (%d)\n", sizeof(inputUser) - 1);
         }
-        fflush(stdin);
 
-        // Limpia el \n al final del inputUser (si existe)
-        inputUser[strcspn(inputUser, "\n")] = 0;
-
-        if (!isValidInput(inputUser)) {
+        if (!isValidInput(input)) {
             printf(">Accion invalida.\n");
             continue;
         }
 
-        if (strcmp(inputUser, QUIT_COMMAND) == 0)
+        if (strcmp(input, QUIT_COMMAND) == 0)
         {
             programIsRunning = FALSE;
             break;
         }
         else
         {
-            if (isNumber(inputUser)) {
-                Apilar(pilaNumeros, atoi(inputUser));
+            if (isNumber(input)) {
+                Apilar(pilaNumeros, atoi(input));
             }
         }
     }
