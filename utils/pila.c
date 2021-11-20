@@ -18,7 +18,15 @@
     {
         Pila* pila = (Pila *) malloc(sizeof(Pila));
         pila->cima = NULL;
+        pila->longitud = 0;
         return pila;
+    }
+
+    void DestruirPila(Pila* pila) {
+        while (pila->cima != NULL) {
+            Desapilar(pila);
+        }
+        free(pila);
     }
 
     void DestruirNodo(Nodo* nodo)
@@ -30,6 +38,7 @@
     void Apilar(Pila* pila, int value) {
         Nodo* nodo = CrearNodo(value);
         nodo->siguiente = pila->cima;
+        pila->longitud++;
         pila->cima = nodo;
     }
 
@@ -37,6 +46,7 @@
         if (pila->cima != NULL) {
             Nodo* eliminar = pila->cima;
             pila->cima = pila->cima->siguiente;
+            pila->longitud--;
             DestruirNodo(eliminar);
         }
     }
@@ -46,6 +56,16 @@
             return NULL;
         else
             return pila->cima->value;
+    }
+
+    int getPilaLongitud(Pila* pila) {
+        return pila->longitud;
+    }
+
+    int TomarCimaYDesapilar(Pila* pila) {
+        int valor = Cima(pila);
+        Desapilar(pila);
+        return valor;
     }
 
 #endif /* pila_c */
