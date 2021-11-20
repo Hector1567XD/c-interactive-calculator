@@ -15,23 +15,21 @@
 
 #include "./get-command-by-input.c"
 #include "./command-dispatch.c"
-#include "./include/context.h";
+#include "./include/context.h"
+#include "./create-program-context.c"
+#include "./get-error.c"
 
 int main()
 {
-    Context* context = (Context *) malloc(sizeof(Context));
-    context->numberStack = CrearPila();
-    context->command = "";
-    context->response = "";
-    context->error = NO_ERRORS;
+    Context* context = CreateProgramContext();
     int programIsRunning = TRUE;
+    char* errorDisplay = "";
 
     while (programIsRunning == TRUE) {
         context->error = NO_ERRORS;
         context->response = "";
 
         printf(">");
-
         getInputed(context->input, &context->error);
 
         if(context->error == INPUT_MAX_LENGTH_ERROR)
@@ -50,15 +48,13 @@ int main()
         }
 
         // Dispatch any other COMMAND
-        commandDispatch(context->command, context->input, context->numberStack, &context->response, &context->error);
+        commandDispatch(context);
 
         // Error displayer
-        if (context->error == INSUFICIENT_VALUES_ERROR) {
-            printf(">No hay suficientes valores en la pila.\n");
-        }
+        errorDisplay = GetError(context->error);
+        if (errorDisplay != "") printf(">%s\n", errorDisplay);
 
         // Response of Command (If is Neccesary)
-            // TODO: Example, Result of "Suma"
         if (context->response != "") printf(">%s\n", context->response);
     }
 

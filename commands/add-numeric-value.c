@@ -9,8 +9,8 @@
 
 #include "../core/include/commands.h"
 #include "../core/include/errors.h"
+#include "../core/include/context.h"
 
-void addNumericValue(Pila* pila, char* input)
-{
-    Apilar(pila, atoi(input));
+void addNumericValue(Context* context) {
+    Apilar(context->numberStack, atoi(context->input));
 }

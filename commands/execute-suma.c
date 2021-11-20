@@ -8,25 +8,26 @@
 #include "../utils/is-number.c"
 
 #include "../core/include/errors.h"
+#include "../core/include/context.h";
 
-void executeSuma(Pila* pila, char **responseText, int *error)
+void executeSuma(Context* context)
 {
-    *error = NO_ERRORS;
+    context->error = NO_ERRORS;
     char resultado[45] = "";
 
-    int pilaSize = getPilaLongitud(pila);
+    int pilaSize = getPilaLongitud(context->numberStack);
     if (pilaSize < 2) {
-      *error = INSUFICIENT_VALUES_ERROR;
+      context->error = INSUFICIENT_VALUES_ERROR;
       return;
     }
 
-    int numeroA = TomarCimaYDesapilar(pila);
-    int numeroB = TomarCimaYDesapilar(pila);
+    int numeroA = TomarCimaYDesapilar(context->numberStack);
+    int numeroB = TomarCimaYDesapilar(context->numberStack);
 
     int operacion = numeroA + numeroB;
 
-    Apilar(pila, operacion);
+    Apilar(context->numberStack, operacion);
 
     snprintf( resultado, 46, "%d", operacion );
-    *responseText = resultado;
+    context->response = resultado;
 }
