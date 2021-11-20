@@ -62,8 +62,6 @@ int main()
         if (responseText != "") printf(">%s\n", responseText);
     }
 
-    printf("----- %d", Cima(pilaNumeros));
-
     return 0;
 }
 
