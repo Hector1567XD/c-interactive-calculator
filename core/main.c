@@ -15,51 +15,51 @@
 
 #include "./get-command-by-input.c"
 #include "./command-dispatch.c"
+#include "./include/context.h";
 
 int main()
 {
+    Context* context = (Context *) malloc(sizeof(Context));
+    context->numberStack = CrearPila();
+    context->command = "";
+    context->response = "";
+    context->error = NO_ERRORS;
     int programIsRunning = TRUE;
-    Pila* pilaNumeros = CrearPila();
-    char input[65] = "";
-
-    int error = NO_ERRORS;
-    char* command = "";
-    char* responseText = "";
 
     while (programIsRunning == TRUE) {
-        error = NO_ERRORS;
-        responseText = "";
+        context->error = NO_ERRORS;
+        context->response = "";
 
         printf(">");
 
-        getInputed(input, &error);
+        getInputed(context->input, &context->error);
 
-        if(error == INPUT_MAX_LENGTH_ERROR)
+        if(context->error == INPUT_MAX_LENGTH_ERROR)
             printf("Error: se ha ingresado mas caracteres de los permitidos\n      solo se tomaran caracteres hasta el limite permitido (%d)\n", MAX_LENGTH);
 
-        command = getCommandByInput(input, &error);
-        if (error == INVALID_COMMAND_ERROR) {
+        context->command = getCommandByInput(context->input, &context->error);
+        if (context->error == INVALID_COMMAND_ERROR) {
             printf(">Accion invalida.\n");
             continue;
         }
 
         // Dispatch Command QUIT
-        if (strcmp(command, QUIT_COMMAND) == 0) {
+        if (strcmp(context->command, QUIT_COMMAND) == 0) {
             programIsRunning = FALSE;
             break;
         }
 
         // Dispatch any other COMMAND
-        commandDispatch(command, input, pilaNumeros, &responseText, &error);
+        commandDispatch(context->command, context->input, context->numberStack, &context->response, &context->error);
 
         // Error displayer
-        if (error == INSUFICIENT_VALUES_ERROR) {
+        if (context->error == INSUFICIENT_VALUES_ERROR) {
             printf(">No hay suficientes valores en la pila.\n");
         }
 
         // Response of Command (If is Neccesary)
             // TODO: Example, Result of "Suma"
-        if (responseText != "") printf(">%s\n", responseText);
+        if (context->response != "") printf(">%s\n", context->response);
     }
 
     return 0;
