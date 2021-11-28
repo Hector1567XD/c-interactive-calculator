@@ -19,7 +19,7 @@
             if (!isdigit(s[i])) {
                 if (i > 0) {
                     // Si NO es el primer caracter
-                    if (s[i] == '.') {
+                    if (s[i] == '.' || s[i] == ',') {
                         // Si resulta ser un punto
                         if (dotQuantity < 1) {
                             // Si no se ha encontrado ningun punto hasta entonces, suma el contador y no pasa nada
