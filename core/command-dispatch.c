@@ -6,9 +6,9 @@
 #include "../utils/include/booleans.h"
 #include "./include/commands.h"
 
-#include "../commands/add-numeric-value.c"
-#include "../commands/execute-suma.c"
-#include "../commands/execute-multiplicar.c"
+#include "../commands/include/add-numeric-value.h"
+#include "../commands/include/execute-suma.h"
+#include "../commands/include/execute-multiplicar.h"
 #include "./include/context.h"
 
 void commandDispatch(Context* context) {

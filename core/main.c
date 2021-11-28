@@ -6,18 +6,18 @@
 #include "../utils/include/pila.h"
 //#include "../utils/pila.c"
 
-#include "../utils/is-number.c"
-#include "../utils/get-inputed.c"
+#include "../utils/include/is-number.h"
+#include "../utils/include/get-inputed.h"
 
 #include "./include/commands.h"
 #include "./include/constans.h"
 #include "./include/errors.h"
 
-#include "./get-command-by-input.c"
-#include "./command-dispatch.c"
+#include "./include/get-command-by-input.h"
+#include "./include/command-dispatch.h"
 #include "./include/context.h"
-#include "./create-program-context.c"
-#include "./get-error.c"
+#include "./include/create-program-context.h"
+#include "./include/get-error.h"
 
 int main()
 {

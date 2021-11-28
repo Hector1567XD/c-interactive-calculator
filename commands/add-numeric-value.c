@@ -5,7 +5,6 @@
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
 //  #include "../utils/pila.c"
-#include "../utils/is-number.c"
 
 #include "../core/include/commands.h"
 #include "../core/include/errors.h"
