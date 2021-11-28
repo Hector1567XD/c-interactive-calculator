@@ -27,5 +27,7 @@ void executeSuma(Context* context)
     Apilar(context->numberStack, operacion);
 
     snprintf( resultado, 46, "%g", operacion );
+    printf(" RESULTADO: %s ", resultado);
     context->response = resultado;
+    printf(" context->response: %s ", context->response);
 }

@@ -15,6 +15,7 @@ void commandDispatch(Context* context) {
     if (isCommand(context, ADD_NUMERIC_VALUE)) addNumericValue(context);
     else if (isCommand(context, SUMA_COMMAND)) executeSuma(context);
     else if (isCommand(context, MULTIPLICAR_COMMAND)) executeMultiplicar(context);
+    printf(" SX Respuesta %s ", context->response);
 }
 
 int isCommand(Context* context, char* command) {
