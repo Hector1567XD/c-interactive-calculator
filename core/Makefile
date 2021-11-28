@@ -13,7 +13,7 @@ $(TARGET) : $(programa)
 	gcc $(CFLAGS) $(programa) -o $(TARGET)
 
 $(OBJ-DIR)/%.o : %.c
-	mkdir -p $(OBJ-DIR)
+	mkdir -f $(OBJ-DIR)
 	gcc -c -MD $(CFLAGS) $< -o $@
 
 -include $(OBJ-DIR)*.d

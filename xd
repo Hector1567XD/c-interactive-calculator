@@ -1,0 +1,383 @@
+In file included from main.c:7:
+../utils/pila.c: In function ‘Cima’:
+../utils/pila.c:58:20: warning: returning ‘void *’ from a function with return type ‘int’ makes integer from pointer without a cast [-Wint-conversion]
+   58 |             return NULL;
+      |                    ^~~~
+In file included from main.c:9:
+../utils/is-number.c: In function ‘isNumber’:
+../utils/is-number.c:18:18: warning: implicit declaration of function ‘isdigit’ [-Wimplicit-function-declaration]
+   18 |             if (!isdigit(s[i])) {
+      |                  ^~~~~~~
+In file included from main.c:16:
+./get-command-by-input.c: In function ‘getCommandByInput’:
+./get-command-by-input.c:27:16: warning: return discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   27 |         return NO_COMMAND;
+      |                ^~~~~~~~~~
+./get-command-by-input.c:30:50: warning: return discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   30 |     if (strcmp(input, QUIT_COMMAND) == 0) return QUIT_COMMAND;
+      |                                                  ^~~~~~~~~~~~
+./get-command-by-input.c:31:50: warning: return discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   31 |     if (strcmp(input, SUMA_COMMAND) == 0) return SUMA_COMMAND;
+      |                                                  ^~~~~~~~~~~~
+./get-command-by-input.c:32:57: warning: return discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   32 |     if (strcmp(input, MULTIPLICAR_COMMAND) == 0) return MULTIPLICAR_COMMAND;
+      |                                                         ^~~~~~~~~~~~~~~~~~~
+./get-command-by-input.c:33:33: warning: return discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   33 |     if (isNumber(input)) return ADD_NUMERIC_VALUE;
+      |                                 ^~~~~~~~~~~~~~~~~
+./get-command-by-input.c:35:12: warning: return discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   35 |     return IMPOSIBLE_COMMAND;
+      |            ^~~~~~~~~~~~~~~~~
+In file included from ./command-dispatch.c:10,
+                 from main.c:17:
+./../commands/execute-suma.c: At top level:
+./../commands/execute-suma.c:11:37: warning: extra tokens at end of #include directive
+   11 | #include "../core/include/context.h";
+      |                                     ^
+In file included from ./command-dispatch.c:11,
+                 from main.c:17:
+./../commands/execute-multiplicar.c:11:37: warning: extra tokens at end of #include directive
+   11 | #include "../core/include/context.h";
+      |                                     ^
+In file included from main.c:17:
+./command-dispatch.c: In function ‘commandDispatch’:
+./command-dispatch.c:15:9: warning: implicit declaration of function ‘isCommand’ [-Wimplicit-function-declaration]
+   15 |     if (isCommand(context, ADD_NUMERIC_VALUE)) addNumericValue(context);
+      |         ^~~~~~~~~
+In file included from main.c:19:
+./create-program-context.c: In function ‘CreateProgramContext’:
+./create-program-context.c:19:22: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   19 |     context->command = NO_COMMAND;
+      |                      ^
+main.c: In function ‘main’:
+main.c:55:26: warning: comparison with string literal results in unspecified behavior [-Waddress]
+   55 |         if (errorDisplay != "") printf(">%s\n", errorDisplay);
+      |                          ^~
+main.c:58:31: warning: comparison with string literal results in unspecified behavior [-Waddress]
+   58 |         if (context->response != "") printf(">%s\n", context->response);
+      |                               ^~
+cc -Wall   -c -o command-dispatch.o command-dispatch.c
+In file included from ../commands/add-numeric-value.c:7,
+                 from command-dispatch.c:9:
+../commands/../utils/pila.c: In function ‘Cima’:
+../commands/../utils/pila.c:58:20: warning: returning ‘void *’ from a function with return type ‘int’ makes integer from pointer without a cast [-Wint-conversion]
+   58 |             return NULL;
+      |                    ^~~~
+In file included from ../commands/add-numeric-value.c:8,
+                 from command-dispatch.c:9:
+../commands/../utils/is-number.c: In function ‘isNumber’:
+../commands/../utils/is-number.c:18:18: warning: implicit declaration of function ‘isdigit’ [-Wimplicit-function-declaration]
+   18 |             if (!isdigit(s[i])) {
+      |                  ^~~~~~~
+In file included from command-dispatch.c:10:
+../commands/execute-suma.c: At top level:
+../commands/execute-suma.c:11:37: warning: extra tokens at end of #include directive
+   11 | #include "../core/include/context.h";
+      |                                     ^
+In file included from command-dispatch.c:11:
+../commands/execute-multiplicar.c:11:37: warning: extra tokens at end of #include directive
+   11 | #include "../core/include/context.h";
+      |                                     ^
+command-dispatch.c: In function ‘commandDispatch’:
+command-dispatch.c:15:9: warning: implicit declaration of function ‘isCommand’ [-Wimplicit-function-declaration]
+   15 |     if (isCommand(context, ADD_NUMERIC_VALUE)) addNumericValue(context);
+      |         ^~~~~~~~~
+cc -Wall   -c -o get-error.o get-error.c
+cc -Wall   -c -o get-command-by-input.o get-command-by-input.c
+In file included from get-command-by-input.c:7:
+../utils/is-number.c: In function ‘isNumber’:
+../utils/is-number.c:18:18: warning: implicit declaration of function ‘isdigit’ [-Wimplicit-function-declaration]
+   18 |             if (!isdigit(s[i])) {
+      |                  ^~~~~~~
+get-command-by-input.c: In function ‘getCommandByInput’:
+get-command-by-input.c:27:16: warning: return discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   27 |         return NO_COMMAND;
+      |                ^~~~~~~~~~
+get-command-by-input.c:30:50: warning: return discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   30 |     if (strcmp(input, QUIT_COMMAND) == 0) return QUIT_COMMAND;
+      |                                                  ^~~~~~~~~~~~
+get-command-by-input.c:31:50: warning: return discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   31 |     if (strcmp(input, SUMA_COMMAND) == 0) return SUMA_COMMAND;
+      |                                                  ^~~~~~~~~~~~
+get-command-by-input.c:32:57: warning: return discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   32 |     if (strcmp(input, MULTIPLICAR_COMMAND) == 0) return MULTIPLICAR_COMMAND;
+      |                                                         ^~~~~~~~~~~~~~~~~~~
+get-command-by-input.c:33:33: warning: return discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   33 |     if (isNumber(input)) return ADD_NUMERIC_VALUE;
+      |                                 ^~~~~~~~~~~~~~~~~
+get-command-by-input.c:35:12: warning: return discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   35 |     return IMPOSIBLE_COMMAND;
+      |            ^~~~~~~~~~~~~~~~~
+cc -Wall   -c -o create-program-context.o create-program-context.c
+In file included from create-program-context.c:7:
+../utils/pila.c: In function ‘Cima’:
+../utils/pila.c:58:20: warning: returning ‘void *’ from a function with return type ‘int’ makes integer from pointer without a cast [-Wint-conversion]
+   58 |             return NULL;
+      |                    ^~~~
+create-program-context.c: In function ‘CreateProgramContext’:
+create-program-context.c:19:22: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   19 |     context->command = NO_COMMAND;
+      |                      ^
+cc -Wall   -c -o add-numeric-value.o ../commands/add-numeric-value.c
+In file included from ../commands/add-numeric-value.c:7:
+../commands/../utils/pila.c: In function ‘Cima’:
+../commands/../utils/pila.c:58:20: warning: returning ‘void *’ from a function with return type ‘int’ makes integer from pointer without a cast [-Wint-conversion]
+   58 |             return NULL;
+      |                    ^~~~
+In file included from ../commands/add-numeric-value.c:8:
+../commands/../utils/is-number.c: In function ‘isNumber’:
+../commands/../utils/is-number.c:18:18: warning: implicit declaration of function ‘isdigit’ [-Wimplicit-function-declaration]
+   18 |             if (!isdigit(s[i])) {
+      |                  ^~~~~~~
+cc -Wall   -c -o execute-suma.o ../commands/execute-suma.c
+In file included from ../commands/execute-suma.c:7:
+../commands/../utils/pila.c: In function ‘Cima’:
+../commands/../utils/pila.c:58:20: warning: returning ‘void *’ from a function with return type ‘int’ makes integer from pointer without a cast [-Wint-conversion]
+   58 |             return NULL;
+      |                    ^~~~
+In file included from ../commands/execute-suma.c:8:
+../commands/../utils/is-number.c: In function ‘isNumber’:
+../commands/../utils/is-number.c:18:18: warning: implicit declaration of function ‘isdigit’ [-Wimplicit-function-declaration]
+   18 |             if (!isdigit(s[i])) {
+      |                  ^~~~~~~
+../commands/execute-suma.c: At top level:
+../commands/execute-suma.c:11:37: warning: extra tokens at end of #include directive
+   11 | #include "../core/include/context.h";
+      |                                     ^
+cc -Wall   -c -o execute-multiplicar.o ../commands/execute-multiplicar.c
+In file included from ../commands/execute-multiplicar.c:7:
+../commands/../utils/pila.c: In function ‘Cima’:
+../commands/../utils/pila.c:58:20: warning: returning ‘void *’ from a function with return type ‘int’ makes integer from pointer without a cast [-Wint-conversion]
+   58 |             return NULL;
+      |                    ^~~~
+In file included from ../commands/execute-multiplicar.c:8:
+../commands/../utils/is-number.c: In function ‘isNumber’:
+../commands/../utils/is-number.c:18:18: warning: implicit declaration of function ‘isdigit’ [-Wimplicit-function-declaration]
+   18 |             if (!isdigit(s[i])) {
+      |                  ^~~~~~~
+../commands/execute-multiplicar.c: At top level:
+../commands/execute-multiplicar.c:11:37: warning: extra tokens at end of #include directive
+   11 | #include "../core/include/context.h";
+      |                                     ^
+cc -Wall   -c -o get-inputed.o ../utils/get-inputed.c
+cc -Wall   -c -o is-number.o ../utils/is-number.c
+../utils/is-number.c: In function ‘isNumber’:
+../utils/is-number.c:18:18: warning: implicit declaration of function ‘isdigit’ [-Wimplicit-function-declaration]
+   18 |             if (!isdigit(s[i])) {
+      |                  ^~~~~~~
+cc -Wall   -c -o pila.o ../utils/pila.c
+../utils/pila.c: In function ‘Cima’:
+../utils/pila.c:58:20: warning: returning ‘void *’ from a function with return type ‘int’ makes integer from pointer without a cast [-Wint-conversion]
+   58 |             return NULL;
+      |                    ^~~~
+gcc -Wall main.o command-dispatch.o get-error.o get-command-by-input.o create-program-context.o add-numeric-value.o execute-suma.o execute-multiplicar.o get-inputed.o is-number.o pila.o -o prog
+/usr/bin/ld: command-dispatch.o:(.data.rel.local+0x0): multiple definition of `QUIT_COMMAND'; main.o:(.data.rel.local+0x0): first defined here
+/usr/bin/ld: command-dispatch.o:(.data.rel.local+0x8): multiple definition of `SUMA_COMMAND'; main.o:(.data.rel.local+0x8): first defined here
+/usr/bin/ld: command-dispatch.o:(.data.rel.local+0x10): multiple definition of `MULTIPLICAR_COMMAND'; main.o:(.data.rel.local+0x10): first defined here
+/usr/bin/ld: command-dispatch.o:(.data.rel.local+0x18): multiple definition of `NO_COMMAND'; main.o:(.data.rel.local+0x18): first defined here
+/usr/bin/ld: command-dispatch.o:(.data.rel.local+0x20): multiple definition of `COMMAND_ERROR'; main.o:(.data.rel.local+0x20): first defined here
+/usr/bin/ld: command-dispatch.o:(.data.rel.local+0x28): multiple definition of `ADD_NUMERIC_VALUE'; main.o:(.data.rel.local+0x28): first defined here
+/usr/bin/ld: command-dispatch.o:(.data.rel.local+0x30): multiple definition of `IMPOSIBLE_COMMAND'; main.o:(.data.rel.local+0x30): first defined here
+/usr/bin/ld: command-dispatch.o: in function `CrearNodo':
+command-dispatch.c:(.text+0x0): multiple definition of `CrearNodo'; main.o:main.c:(.text+0x0): first defined here
+/usr/bin/ld: command-dispatch.o: in function `CrearPila':
+command-dispatch.c:(.text+0x34): multiple definition of `CrearPila'; main.o:main.c:(.text+0x34): first defined here
+/usr/bin/ld: command-dispatch.o: in function `DestruirPila':
+command-dispatch.c:(.text+0x66): multiple definition of `DestruirPila'; main.o:main.c:(.text+0x66): first defined here
+/usr/bin/ld: command-dispatch.o: in function `Desapilar':
+command-dispatch.c:(.text+0x10d): multiple definition of `Desapilar'; main.o:main.c:(.text+0x10d): first defined here
+/usr/bin/ld: command-dispatch.o: in function `DestruirNodo':
+command-dispatch.c:(.text+0x9b): multiple definition of `DestruirNodo'; main.o:main.c:(.text+0x9b): first defined here
+/usr/bin/ld: command-dispatch.o: in function `Apilar':
+command-dispatch.c:(.text+0xc2): multiple definition of `Apilar'; main.o:main.c:(.text+0xc2): first defined here
+/usr/bin/ld: command-dispatch.o: in function `Cima':
+command-dispatch.c:(.text+0x162): multiple definition of `Cima'; main.o:main.c:(.text+0x162): first defined here
+/usr/bin/ld: command-dispatch.o: in function `getPilaLongitud':
+command-dispatch.c:(.text+0x188): multiple definition of `getPilaLongitud'; main.o:main.c:(.text+0x188): first defined here
+/usr/bin/ld: command-dispatch.o: in function `TomarCimaYDesapilar':
+command-dispatch.c:(.text+0x199): multiple definition of `TomarCimaYDesapilar'; main.o:main.c:(.text+0x199): first defined here
+/usr/bin/ld: command-dispatch.o: in function `isNumber':
+command-dispatch.c:(.text+0x1c5): multiple definition of `isNumber'; main.o:main.c:(.text+0x1c5): first defined here
+/usr/bin/ld: command-dispatch.o:(.rodata+0x48): multiple definition of `NO_ERRORS'; main.o:(.rodata+0x4): first defined here
+/usr/bin/ld: command-dispatch.o:(.rodata+0x4c): multiple definition of `INPUT_MAX_LENGTH_ERROR'; main.o:(.rodata+0x8): first defined here
+/usr/bin/ld: command-dispatch.o:(.rodata+0x50): multiple definition of `INVALID_COMMAND_ERROR'; main.o:(.rodata+0xc): first defined here
+/usr/bin/ld: command-dispatch.o:(.rodata+0x54): multiple definition of `INSUFICIENT_VALUES_ERROR'; main.o:(.rodata+0x10): first defined here
+/usr/bin/ld: command-dispatch.o: in function `addNumericValue':
+command-dispatch.c:(.text+0x286): multiple definition of `addNumericValue'; main.o:main.c:(.text+0x4cc): first defined here
+/usr/bin/ld: command-dispatch.o: in function `executeSuma':
+command-dispatch.c:(.text+0x2b5): multiple definition of `executeSuma'; main.o:main.c:(.text+0x4fb): first defined here
+/usr/bin/ld: command-dispatch.o: in function `executeMultiplicar':
+command-dispatch.c:(.text+0x39d): multiple definition of `executeMultiplicar'; main.o:main.c:(.text+0x5e3): first defined here
+/usr/bin/ld: command-dispatch.o: in function `commandDispatch':
+command-dispatch.c:(.text+0x484): multiple definition of `commandDispatch'; main.o:main.c:(.text+0x6ca): first defined here
+/usr/bin/ld: command-dispatch.o: in function `isCommand':
+command-dispatch.c:(.text+0x518): multiple definition of `isCommand'; main.o:main.c:(.text+0x75e): first defined here
+/usr/bin/ld: get-error.o:(.rodata+0x0): multiple definition of `NO_ERRORS'; main.o:(.rodata+0x4): first defined here
+/usr/bin/ld: get-error.o:(.rodata+0x4): multiple definition of `INPUT_MAX_LENGTH_ERROR'; main.o:(.rodata+0x8): first defined here
+/usr/bin/ld: get-error.o:(.rodata+0x8): multiple definition of `INVALID_COMMAND_ERROR'; main.o:(.rodata+0xc): first defined here
+/usr/bin/ld: get-error.o:(.rodata+0xc): multiple definition of `INSUFICIENT_VALUES_ERROR'; main.o:(.rodata+0x10): first defined here
+/usr/bin/ld: get-error.o: in function `GetError':
+get-error.c:(.text+0x0): multiple definition of `GetError'; main.o:main.c:(.text+0x7ef): first defined here
+/usr/bin/ld: get-command-by-input.o: in function `isNumber':
+get-command-by-input.c:(.text+0x0): multiple definition of `isNumber'; main.o:main.c:(.text+0x1c5): first defined here
+/usr/bin/ld: get-command-by-input.o:(.data.rel.local+0x0): multiple definition of `QUIT_COMMAND'; main.o:(.data.rel.local+0x0): first defined here
+/usr/bin/ld: get-command-by-input.o:(.data.rel.local+0x8): multiple definition of `SUMA_COMMAND'; main.o:(.data.rel.local+0x8): first defined here
+/usr/bin/ld: get-command-by-input.o:(.data.rel.local+0x10): multiple definition of `MULTIPLICAR_COMMAND'; main.o:(.data.rel.local+0x10): first defined here
+/usr/bin/ld: get-command-by-input.o:(.data.rel.local+0x18): multiple definition of `NO_COMMAND'; main.o:(.data.rel.local+0x18): first defined here
+/usr/bin/ld: get-command-by-input.o:(.data.rel.local+0x20): multiple definition of `COMMAND_ERROR'; main.o:(.data.rel.local+0x20): first defined here
+/usr/bin/ld: get-command-by-input.o:(.data.rel.local+0x28): multiple definition of `ADD_NUMERIC_VALUE'; main.o:(.data.rel.local+0x28): first defined here
+/usr/bin/ld: get-command-by-input.o:(.data.rel.local+0x30): multiple definition of `IMPOSIBLE_COMMAND'; main.o:(.data.rel.local+0x30): first defined here
+/usr/bin/ld: get-command-by-input.o:(.rodata+0x48): multiple definition of `NO_ERRORS'; main.o:(.rodata+0x4): first defined here
+/usr/bin/ld: get-command-by-input.o:(.rodata+0x4c): multiple definition of `INPUT_MAX_LENGTH_ERROR'; main.o:(.rodata+0x8): first defined here
+/usr/bin/ld: get-command-by-input.o:(.rodata+0x50): multiple definition of `INVALID_COMMAND_ERROR'; main.o:(.rodata+0xc): first defined here
+/usr/bin/ld: get-command-by-input.o:(.rodata+0x54): multiple definition of `INSUFICIENT_VALUES_ERROR'; main.o:(.rodata+0x10): first defined here
+/usr/bin/ld: get-command-by-input.o: in function `isValidInput':
+get-command-by-input.c:(.text+0xc1): multiple definition of `isValidInput'; main.o:main.c:(.text+0x372): first defined here
+/usr/bin/ld: get-command-by-input.o: in function `getCommandByInput':
+get-command-by-input.c:(.text+0x14e): multiple definition of `getCommandByInput'; main.o:main.c:(.text+0x3ff): first defined here
+/usr/bin/ld: create-program-context.o: in function `CrearNodo':
+create-program-context.c:(.text+0x0): multiple definition of `CrearNodo'; main.o:main.c:(.text+0x0): first defined here
+/usr/bin/ld: create-program-context.o: in function `CrearPila':
+create-program-context.c:(.text+0x34): multiple definition of `CrearPila'; main.o:main.c:(.text+0x34): first defined here
+/usr/bin/ld: create-program-context.o: in function `DestruirPila':
+create-program-context.c:(.text+0x66): multiple definition of `DestruirPila'; main.o:main.c:(.text+0x66): first defined here
+/usr/bin/ld: create-program-context.o: in function `Desapilar':
+create-program-context.c:(.text+0x10d): multiple definition of `Desapilar'; main.o:main.c:(.text+0x10d): first defined here
+/usr/bin/ld: create-program-context.o: in function `DestruirNodo':
+create-program-context.c:(.text+0x9b): multiple definition of `DestruirNodo'; main.o:main.c:(.text+0x9b): first defined here
+/usr/bin/ld: create-program-context.o: in function `Apilar':
+create-program-context.c:(.text+0xc2): multiple definition of `Apilar'; main.o:main.c:(.text+0xc2): first defined here
+/usr/bin/ld: create-program-context.o: in function `Cima':
+create-program-context.c:(.text+0x162): multiple definition of `Cima'; main.o:main.c:(.text+0x162): first defined here
+/usr/bin/ld: create-program-context.o: in function `getPilaLongitud':
+create-program-context.c:(.text+0x188): multiple definition of `getPilaLongitud'; main.o:main.c:(.text+0x188): first defined here
+/usr/bin/ld: create-program-context.o: in function `TomarCimaYDesapilar':
+create-program-context.c:(.text+0x199): multiple definition of `TomarCimaYDesapilar'; main.o:main.c:(.text+0x199): first defined here
+/usr/bin/ld: create-program-context.o:(.data.rel.local+0x0): multiple definition of `QUIT_COMMAND'; main.o:(.data.rel.local+0x0): first defined here
+/usr/bin/ld: create-program-context.o:(.data.rel.local+0x8): multiple definition of `SUMA_COMMAND'; main.o:(.data.rel.local+0x8): first defined here
+/usr/bin/ld: create-program-context.o:(.data.rel.local+0x10): multiple definition of `MULTIPLICAR_COMMAND'; main.o:(.data.rel.local+0x10): first defined here
+/usr/bin/ld: create-program-context.o:(.data.rel.local+0x18): multiple definition of `NO_COMMAND'; main.o:(.data.rel.local+0x18): first defined here
+/usr/bin/ld: create-program-context.o:(.data.rel.local+0x20): multiple definition of `COMMAND_ERROR'; main.o:(.data.rel.local+0x20): first defined here
+/usr/bin/ld: create-program-context.o:(.data.rel.local+0x28): multiple definition of `ADD_NUMERIC_VALUE'; main.o:(.data.rel.local+0x28): first defined here
+/usr/bin/ld: create-program-context.o:(.data.rel.local+0x30): multiple definition of `IMPOSIBLE_COMMAND'; main.o:(.data.rel.local+0x30): first defined here
+/usr/bin/ld: create-program-context.o:(.rodata+0x48): multiple definition of `MAX_LENGTH'; main.o:(.rodata+0x14): first defined here
+/usr/bin/ld: create-program-context.o:(.rodata+0x4c): multiple definition of `NO_ERRORS'; main.o:(.rodata+0x4): first defined here
+/usr/bin/ld: create-program-context.o:(.rodata+0x50): multiple definition of `INPUT_MAX_LENGTH_ERROR'; main.o:(.rodata+0x8): first defined here
+/usr/bin/ld: create-program-context.o:(.rodata+0x54): multiple definition of `INVALID_COMMAND_ERROR'; main.o:(.rodata+0xc): first defined here
+/usr/bin/ld: create-program-context.o:(.rodata+0x58): multiple definition of `INSUFICIENT_VALUES_ERROR'; main.o:(.rodata+0x10): first defined here
+/usr/bin/ld: create-program-context.o: in function `CreateProgramContext':
+create-program-context.c:(.text+0x1c5): multiple definition of `CreateProgramContext'; main.o:main.c:(.text+0x797): first defined here
+/usr/bin/ld: add-numeric-value.o: in function `CrearNodo':
+add-numeric-value.c:(.text+0x0): multiple definition of `CrearNodo'; main.o:main.c:(.text+0x0): first defined here
+/usr/bin/ld: add-numeric-value.o: in function `CrearPila':
+add-numeric-value.c:(.text+0x34): multiple definition of `CrearPila'; main.o:main.c:(.text+0x34): first defined here
+/usr/bin/ld: add-numeric-value.o: in function `DestruirPila':
+add-numeric-value.c:(.text+0x66): multiple definition of `DestruirPila'; main.o:main.c:(.text+0x66): first defined here
+/usr/bin/ld: add-numeric-value.o: in function `Desapilar':
+add-numeric-value.c:(.text+0x10d): multiple definition of `Desapilar'; main.o:main.c:(.text+0x10d): first defined here
+/usr/bin/ld: add-numeric-value.o: in function `DestruirNodo':
+add-numeric-value.c:(.text+0x9b): multiple definition of `DestruirNodo'; main.o:main.c:(.text+0x9b): first defined here
+/usr/bin/ld: add-numeric-value.o: in function `Apilar':
+add-numeric-value.c:(.text+0xc2): multiple definition of `Apilar'; main.o:main.c:(.text+0xc2): first defined here
+/usr/bin/ld: add-numeric-value.o: in function `Cima':
+add-numeric-value.c:(.text+0x162): multiple definition of `Cima'; main.o:main.c:(.text+0x162): first defined here
+/usr/bin/ld: add-numeric-value.o: in function `getPilaLongitud':
+add-numeric-value.c:(.text+0x188): multiple definition of `getPilaLongitud'; main.o:main.c:(.text+0x188): first defined here
+/usr/bin/ld: add-numeric-value.o: in function `TomarCimaYDesapilar':
+add-numeric-value.c:(.text+0x199): multiple definition of `TomarCimaYDesapilar'; main.o:main.c:(.text+0x199): first defined here
+/usr/bin/ld: add-numeric-value.o: in function `isNumber':
+add-numeric-value.c:(.text+0x1c5): multiple definition of `isNumber'; main.o:main.c:(.text+0x1c5): first defined here
+/usr/bin/ld: add-numeric-value.o:(.data.rel.local+0x0): multiple definition of `QUIT_COMMAND'; main.o:(.data.rel.local+0x0): first defined here
+/usr/bin/ld: add-numeric-value.o:(.data.rel.local+0x8): multiple definition of `SUMA_COMMAND'; main.o:(.data.rel.local+0x8): first defined here
+/usr/bin/ld: add-numeric-value.o:(.data.rel.local+0x10): multiple definition of `MULTIPLICAR_COMMAND'; main.o:(.data.rel.local+0x10): first defined here
+/usr/bin/ld: add-numeric-value.o:(.data.rel.local+0x18): multiple definition of `NO_COMMAND'; main.o:(.data.rel.local+0x18): first defined here
+/usr/bin/ld: add-numeric-value.o:(.data.rel.local+0x20): multiple definition of `COMMAND_ERROR'; main.o:(.data.rel.local+0x20): first defined here
+/usr/bin/ld: add-numeric-value.o:(.data.rel.local+0x28): multiple definition of `ADD_NUMERIC_VALUE'; main.o:(.data.rel.local+0x28): first defined here
+/usr/bin/ld: add-numeric-value.o:(.data.rel.local+0x30): multiple definition of `IMPOSIBLE_COMMAND'; main.o:(.data.rel.local+0x30): first defined here
+/usr/bin/ld: add-numeric-value.o:(.rodata+0x48): multiple definition of `NO_ERRORS'; main.o:(.rodata+0x4): first defined here
+/usr/bin/ld: add-numeric-value.o:(.rodata+0x4c): multiple definition of `INPUT_MAX_LENGTH_ERROR'; main.o:(.rodata+0x8): first defined here
+/usr/bin/ld: add-numeric-value.o:(.rodata+0x50): multiple definition of `INVALID_COMMAND_ERROR'; main.o:(.rodata+0xc): first defined here
+/usr/bin/ld: add-numeric-value.o:(.rodata+0x54): multiple definition of `INSUFICIENT_VALUES_ERROR'; main.o:(.rodata+0x10): first defined here
+/usr/bin/ld: add-numeric-value.o: in function `addNumericValue':
+add-numeric-value.c:(.text+0x286): multiple definition of `addNumericValue'; main.o:main.c:(.text+0x4cc): first defined here
+/usr/bin/ld: execute-suma.o: in function `CrearNodo':
+execute-suma.c:(.text+0x0): multiple definition of `CrearNodo'; main.o:main.c:(.text+0x0): first defined here
+/usr/bin/ld: execute-suma.o: in function `CrearPila':
+execute-suma.c:(.text+0x34): multiple definition of `CrearPila'; main.o:main.c:(.text+0x34): first defined here
+/usr/bin/ld: execute-suma.o: in function `DestruirPila':
+execute-suma.c:(.text+0x66): multiple definition of `DestruirPila'; main.o:main.c:(.text+0x66): first defined here
+/usr/bin/ld: execute-suma.o: in function `Desapilar':
+execute-suma.c:(.text+0x10d): multiple definition of `Desapilar'; main.o:main.c:(.text+0x10d): first defined here
+/usr/bin/ld: execute-suma.o: in function `DestruirNodo':
+execute-suma.c:(.text+0x9b): multiple definition of `DestruirNodo'; main.o:main.c:(.text+0x9b): first defined here
+/usr/bin/ld: execute-suma.o: in function `Apilar':
+execute-suma.c:(.text+0xc2): multiple definition of `Apilar'; main.o:main.c:(.text+0xc2): first defined here
+/usr/bin/ld: execute-suma.o: in function `Cima':
+execute-suma.c:(.text+0x162): multiple definition of `Cima'; main.o:main.c:(.text+0x162): first defined here
+/usr/bin/ld: execute-suma.o: in function `getPilaLongitud':
+execute-suma.c:(.text+0x188): multiple definition of `getPilaLongitud'; main.o:main.c:(.text+0x188): first defined here
+/usr/bin/ld: execute-suma.o: in function `TomarCimaYDesapilar':
+execute-suma.c:(.text+0x199): multiple definition of `TomarCimaYDesapilar'; main.o:main.c:(.text+0x199): first defined here
+/usr/bin/ld: execute-suma.o: in function `isNumber':
+execute-suma.c:(.text+0x1c5): multiple definition of `isNumber'; main.o:main.c:(.text+0x1c5): first defined here
+/usr/bin/ld: execute-suma.o:(.rodata+0x4): multiple definition of `NO_ERRORS'; main.o:(.rodata+0x4): first defined here
+/usr/bin/ld: execute-suma.o:(.rodata+0x8): multiple definition of `INPUT_MAX_LENGTH_ERROR'; main.o:(.rodata+0x8): first defined here
+/usr/bin/ld: execute-suma.o:(.rodata+0xc): multiple definition of `INVALID_COMMAND_ERROR'; main.o:(.rodata+0xc): first defined here
+/usr/bin/ld: execute-suma.o:(.rodata+0x10): multiple definition of `INSUFICIENT_VALUES_ERROR'; main.o:(.rodata+0x10): first defined here
+/usr/bin/ld: execute-suma.o: in function `executeSuma':
+execute-suma.c:(.text+0x286): multiple definition of `executeSuma'; main.o:main.c:(.text+0x4fb): first defined here
+/usr/bin/ld: execute-multiplicar.o: in function `CrearNodo':
+execute-multiplicar.c:(.text+0x0): multiple definition of `CrearNodo'; main.o:main.c:(.text+0x0): first defined here
+/usr/bin/ld: execute-multiplicar.o: in function `CrearPila':
+execute-multiplicar.c:(.text+0x34): multiple definition of `CrearPila'; main.o:main.c:(.text+0x34): first defined here
+/usr/bin/ld: execute-multiplicar.o: in function `DestruirPila':
+execute-multiplicar.c:(.text+0x66): multiple definition of `DestruirPila'; main.o:main.c:(.text+0x66): first defined here
+/usr/bin/ld: execute-multiplicar.o: in function `Desapilar':
+execute-multiplicar.c:(.text+0x10d): multiple definition of `Desapilar'; main.o:main.c:(.text+0x10d): first defined here
+/usr/bin/ld: execute-multiplicar.o: in function `DestruirNodo':
+execute-multiplicar.c:(.text+0x9b): multiple definition of `DestruirNodo'; main.o:main.c:(.text+0x9b): first defined here
+/usr/bin/ld: execute-multiplicar.o: in function `Apilar':
+execute-multiplicar.c:(.text+0xc2): multiple definition of `Apilar'; main.o:main.c:(.text+0xc2): first defined here
+/usr/bin/ld: execute-multiplicar.o: in function `Cima':
+execute-multiplicar.c:(.text+0x162): multiple definition of `Cima'; main.o:main.c:(.text+0x162): first defined here
+/usr/bin/ld: execute-multiplicar.o: in function `getPilaLongitud':
+execute-multiplicar.c:(.text+0x188): multiple definition of `getPilaLongitud'; main.o:main.c:(.text+0x188): first defined here
+/usr/bin/ld: execute-multiplicar.o: in function `TomarCimaYDesapilar':
+execute-multiplicar.c:(.text+0x199): multiple definition of `TomarCimaYDesapilar'; main.o:main.c:(.text+0x199): first defined here
+/usr/bin/ld: execute-multiplicar.o: in function `isNumber':
+execute-multiplicar.c:(.text+0x1c5): multiple definition of `isNumber'; main.o:main.c:(.text+0x1c5): first defined here
+/usr/bin/ld: execute-multiplicar.o:(.rodata+0x4): multiple definition of `NO_ERRORS'; main.o:(.rodata+0x4): first defined here
+/usr/bin/ld: execute-multiplicar.o:(.rodata+0x8): multiple definition of `INPUT_MAX_LENGTH_ERROR'; main.o:(.rodata+0x8): first defined here
+/usr/bin/ld: execute-multiplicar.o:(.rodata+0xc): multiple definition of `INVALID_COMMAND_ERROR'; main.o:(.rodata+0xc): first defined here
+/usr/bin/ld: execute-multiplicar.o:(.rodata+0x10): multiple definition of `INSUFICIENT_VALUES_ERROR'; main.o:(.rodata+0x10): first defined here
+/usr/bin/ld: execute-multiplicar.o: in function `executeMultiplicar':
+execute-multiplicar.c:(.text+0x286): multiple definition of `executeMultiplicar'; main.o:main.c:(.text+0x5e3): first defined here
+/usr/bin/ld: get-inputed.o:(.rodata+0x0): multiple definition of `NO_ERRORS'; main.o:(.rodata+0x4): first defined here
+/usr/bin/ld: get-inputed.o:(.rodata+0x4): multiple definition of `INPUT_MAX_LENGTH_ERROR'; main.o:(.rodata+0x8): first defined here
+/usr/bin/ld: get-inputed.o:(.rodata+0x8): multiple definition of `INVALID_COMMAND_ERROR'; main.o:(.rodata+0xc): first defined here
+/usr/bin/ld: get-inputed.o:(.rodata+0xc): multiple definition of `INSUFICIENT_VALUES_ERROR'; main.o:(.rodata+0x10): first defined here
+/usr/bin/ld: get-inputed.o:(.rodata+0x10): multiple definition of `MAX_LENGTH'; main.o:(.rodata+0x14): first defined here
+/usr/bin/ld: get-inputed.o: in function `getInputed':
+get-inputed.c:(.text+0x0): multiple definition of `getInputed'; main.o:main.c:(.text+0x286): first defined here
+/usr/bin/ld: is-number.o: in function `isNumber':
+is-number.c:(.text+0x0): multiple definition of `isNumber'; main.o:main.c:(.text+0x1c5): first defined here
+/usr/bin/ld: pila.o: in function `CrearNodo':
+pila.c:(.text+0x0): multiple definition of `CrearNodo'; main.o:main.c:(.text+0x0): first defined here
+/usr/bin/ld: pila.o: in function `CrearPila':
+pila.c:(.text+0x34): multiple definition of `CrearPila'; main.o:main.c:(.text+0x34): first defined here
+/usr/bin/ld: pila.o: in function `DestruirPila':
+pila.c:(.text+0x66): multiple definition of `DestruirPila'; main.o:main.c:(.text+0x66): first defined here
+/usr/bin/ld: pila.o: in function `Desapilar':
+pila.c:(.text+0x10d): multiple definition of `Desapilar'; main.o:main.c:(.text+0x10d): first defined here
+/usr/bin/ld: pila.o: in function `DestruirNodo':
+pila.c:(.text+0x9b): multiple definition of `DestruirNodo'; main.o:main.c:(.text+0x9b): first defined here
+/usr/bin/ld: pila.o: in function `Apilar':
+pila.c:(.text+0xc2): multiple definition of `Apilar'; main.o:main.c:(.text+0xc2): first defined here
+/usr/bin/ld: pila.o: in function `Cima':
+pila.c:(.text+0x162): multiple definition of `Cima'; main.o:main.c:(.text+0x162): first defined here
+/usr/bin/ld: pila.o: in function `getPilaLongitud':
+pila.c:(.text+0x188): multiple definition of `getPilaLongitud'; main.o:main.c:(.text+0x188): first defined here
+/usr/bin/ld: pila.o: in function `TomarCimaYDesapilar':
+pila.c:(.text+0x199): multiple definition of `TomarCimaYDesapilar'; main.o:main.c:(.text+0x199): first defined here
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:13: prog] Error 1
