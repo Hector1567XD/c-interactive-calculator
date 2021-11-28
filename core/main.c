@@ -24,10 +24,7 @@ void executeProgram(Context* context) {
   context->command = getCommandByInput(context->input, &context->error);
   if (context->error == NO_ERRORS && strcmp(context->command, QUIT_COMMAND) != 0) {
       commandDispatch(context);
-      context->response = "quemado 1";
-      printf("oooooo %s \n", context->response);
   }
-  context->response = "quemado 2";
 }
 
 int main()
@@ -47,7 +44,6 @@ int main()
             printf("Error: se ha ingresado mas caracteres de los permitidos\n      solo se tomaran caracteres hasta el limite permitido (%d)\n", MAX_LENGTH);
 
         executeProgram(context);
-        printf("=====-- %s \n", context->response);
 
         // Si detecta que ha habido un comando invalido
         if (context->error == INVALID_COMMAND_ERROR) {
