@@ -6,7 +6,7 @@
 #include "../utils/include/pila.h"
 
 #include "../core/include/errors.h"
-#include "../core/include/context.h";
+#include "../core/include/context.h"
 
 void executeSuma(Context* context)
 {
