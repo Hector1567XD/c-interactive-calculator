@@ -6,7 +6,7 @@
     #include <stdio.h>
     #include <stdlib.h>
 
-    Nodo* CrearNodo(int value)
+    Nodo* CrearNodo(double value)
     {
         Nodo* nodo = (Nodo *) malloc(sizeof(Nodo));
         nodo->value = value;
@@ -35,7 +35,7 @@
         free(nodo);
     }
 
-    void Apilar(Pila* pila, int value) {
+    void Apilar(Pila* pila, double value) {
         Nodo* nodo = CrearNodo(value);
         nodo->siguiente = pila->cima;
         pila->longitud++;
@@ -51,7 +51,7 @@
         }
     }
 
-    int Cima(Pila* pila) {
+    double Cima(Pila* pila) {
         if (pila->cima == NULL)
             return NULL;
         else
@@ -62,7 +62,7 @@
         return pila->longitud;
     }
 
-    int TomarCimaYDesapilar(Pila* pila) {
+    double TomarCimaYDesapilar(Pila* pila) {
         int valor = Cima(pila);
         Desapilar(pila);
         return valor;

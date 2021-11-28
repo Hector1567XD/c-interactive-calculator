@@ -10,5 +10,5 @@
 #include "../core/include/context.h"
 
 void addNumericValue(Context* context) {
-    Apilar(context->numberStack, atoi(context->input));
+    Apilar(context->numberStack, strtod(context->input, NULL));
 }

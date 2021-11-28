@@ -19,10 +19,10 @@ void executeSuma(Context* context)
       return;
     }
 
-    int numeroA = TomarCimaYDesapilar(context->numberStack);
-    int numeroB = TomarCimaYDesapilar(context->numberStack);
+    double numeroA = TomarCimaYDesapilar(context->numberStack);
+    double numeroB = TomarCimaYDesapilar(context->numberStack);
 
-    int operacion = numeroA + numeroB;
+    double operacion = numeroA + numeroB;
 
     Apilar(context->numberStack, operacion);
 
