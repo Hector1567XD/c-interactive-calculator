@@ -78,7 +78,6 @@ int main(int argQuantity, char* arg[])
         strcpy(context->input, arg[i]);
         executeProgram(context);
 
-        // Si detecta que ha habido un comando invalido
         if (context->error == INVALID_COMMAND_ERROR) {
           printf("Comando o accion invalida '%s' en el argumento %i\n", context->input, i);
           hasError = TRUE;
