@@ -23,7 +23,9 @@ void executeProgram(Context* context) {
   context->response = "";
   context->command = getCommandByInput(context->input, &context->error);
   if (context->error == NO_ERRORS && strcmp(context->command, QUIT_COMMAND) != 0) {
+      printf("XD Respuesta");
       commandDispatch(context);
+      printf("%s\n", context->response);
   }
 }
 
