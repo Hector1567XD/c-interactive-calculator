@@ -2,18 +2,18 @@
 #define commands_h
 
 // ACTION COMMANDS
-const char* QUIT_COMMAND = "QUIT";
+extern const char* QUIT_COMMAND = "QUIT";
 
 // ARITMETICS COMMANDS
-const char* SUMA_COMMAND = "+";
-const char* MULTIPLICAR_COMMAND = "*";
+extern const char* SUMA_COMMAND = "+";
+extern const char* MULTIPLICAR_COMMAND = "*";
 
 // ESPECIAL COMMANDS
-const char* NO_COMMAND = "NO_COMMAND";
-const char* COMMAND_ERROR = "COMMAND_ERROR";
-const char* ADD_NUMERIC_VALUE = "ADD_NUMERIC_VALUE";
+extern const char* NO_COMMAND = "NO_COMMAND";
+extern const char* COMMAND_ERROR = "COMMAND_ERROR";
+extern const char* ADD_NUMERIC_VALUE = "ADD_NUMERIC_VALUE";
 
 // EASTER EGG
-const char* IMPOSIBLE_COMMAND = "IMPOSIBLE_COMMAND";
+extern const char* IMPOSIBLE_COMMAND = "IMPOSIBLE_COMMAND";
 
 #endif

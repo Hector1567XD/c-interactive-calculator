@@ -3,17 +3,15 @@ vpath %.c ../commands:../utils
 
 TARGET = prog
 OBJ-DIR = ../obj
-programa = main.o command-dispatch.o get-error.o get-command-by-input.o\
-					 create-program-context.o add-numeric-value.o execute-suma.o\
-					 execute-multiplicar.o get-inputed.o is-number.o pila.o
+programa = pila.o main.o
 CFLAGS = -Wall
 
 
 $(TARGET) : $(programa)
-	gcc $(programa) -o $(TARGET)
+	gcc $(CFLAGS) pila.o main.o -o $(TARGET)
 
 $(OBJ-DIR)/%.o : %.c
-	mkdir -f $(OBJ-DIR)
+	mkdir -p $(OBJ-DIR)
 	gcc -c -MD $(CFLAGS) $< -o $@
 
 -include $(OBJ-DIR)*.d

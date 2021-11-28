@@ -4,7 +4,7 @@
 
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
-#include "../utils/pila.c"
+//#include "../utils/pila.c"
 
 #include "../utils/is-number.c"
 #include "../utils/get-inputed.c"

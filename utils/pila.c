@@ -6,7 +6,7 @@
     #include <stdio.h>
     #include <stdlib.h>
 
-    //hola // 
+    //hola //
 
     Nodo* CrearNodo(int value)
     {
