@@ -10,7 +10,7 @@ CFLAGS = -Wall
 
 
 $(TARGET) : $(programa)
-	gcc $(CFLAGS) $(programa) -o $(TARGET)
+	gcc $(programa) -o $(TARGET)
 
 $(OBJ-DIR)/%.o : %.c
 	mkdir -f $(OBJ-DIR)
