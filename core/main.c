@@ -15,51 +15,47 @@
 
 #include "./get-command-by-input.c"
 #include "./command-dispatch.c"
+#include "./include/context.h"
+#include "./create-program-context.c"
+#include "./get-error.c"
 
 int main()
 {
+    Context* context = CreateProgramContext();
     int programIsRunning = TRUE;
-    Pila* pilaNumeros = CrearPila();
-    char input[65] = "";
-
-    int error = NO_ERRORS;
-    char* command = "";
-    char* responseText = "";
+    char* errorDisplay = "";
 
     while (programIsRunning == TRUE) {
-        error = NO_ERRORS;
-        responseText = "";
+        context->error = NO_ERRORS;
+        context->response = "";
 
         printf(">");
+        getInputed(context->input, &context->error);
 
-        getInputed(input, &error);
-
-        if(error == INPUT_MAX_LENGTH_ERROR)
+        if(context->error == INPUT_MAX_LENGTH_ERROR)
             printf("Error: se ha ingresado mas caracteres de los permitidos\n      solo se tomaran caracteres hasta el limite permitido (%d)\n", MAX_LENGTH);
 
-        command = getCommandByInput(input, &error);
-        if (error == INVALID_COMMAND_ERROR) {
+        context->command = getCommandByInput(context->input, &context->error);
+        if (context->error == INVALID_COMMAND_ERROR) {
             printf(">Accion invalida.\n");
             continue;
         }
 
         // Dispatch Command QUIT
-        if (strcmp(command, QUIT_COMMAND) == 0) {
+        if (strcmp(context->command, QUIT_COMMAND) == 0) {
             programIsRunning = FALSE;
             break;
         }
 
         // Dispatch any other COMMAND
-        commandDispatch(command, input, pilaNumeros, &responseText, &error);
+        commandDispatch(context);
 
         // Error displayer
-        if (error == INSUFICIENT_VALUES_ERROR) {
-            printf(">No hay suficientes valores en la pila.\n");
-        }
+        errorDisplay = GetError(context->error);
+        if (errorDisplay != "") printf(">%s\n", errorDisplay);
 
         // Response of Command (If is Neccesary)
-            // TODO: Example, Result of "Suma"
-        if (responseText != "") printf(">%s\n", responseText);
+        if (context->response != "") printf(">%s\n", context->response);
     }
 
     return 0;
