@@ -5,18 +5,18 @@
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
 
-#include "../utils/include/is-number.h"
 #include "../utils/include/get-inputed.h"
+#include "../utils/include/is-number.h"
 
 #include "./include/commands.h"
 #include "./include/constans.h"
 #include "./include/errors.h"
 
+#include "./include/create-program-context.h"
 #include "./include/get-command-by-input.h"
 #include "./include/command-dispatch.h"
-#include "./include/context.h"
-#include "./include/create-program-context.h"
 #include "./include/get-error.h"
+#include "./include/context.h"
 
 void executeProgram(Context* context) {
   context->error = NO_ERRORS;
