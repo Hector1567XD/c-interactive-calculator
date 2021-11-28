@@ -19,6 +19,7 @@
 #include "./include/get-error.h"
 
 void executeProgram(Context* context) {
+  context->error == NO_ERRORS;
   context->command = getCommandByInput(context->input, &context->error);
   if (context->error == NO_ERRORS && strcmp(context->command, QUIT_COMMAND) != 0) {
       commandDispatch(context);
