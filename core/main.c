@@ -18,6 +18,13 @@
 #include "./include/create-program-context.h"
 #include "./include/get-error.h"
 
+void executeProgram(Context* context) {
+  context->command = getCommandByInput(context->input, &context->error);
+  if (context->error == NO_ERRORS && strcmp(context->command, QUIT_COMMAND) != 0) {
+      commandDispatch(context);
+  }
+}
+
 int main()
 {
     Context* context = CreateProgramContext();
@@ -34,7 +41,9 @@ int main()
         if(context->error == INPUT_MAX_LENGTH_ERROR)
             printf("Error: se ha ingresado mas caracteres de los permitidos\n      solo se tomaran caracteres hasta el limite permitido (%d)\n", MAX_LENGTH);
 
-        context->command = getCommandByInput(context->input, &context->error);
+        executeProgram(context);
+
+        // Si detecta que ha habido un comando invalido
         if (context->error == INVALID_COMMAND_ERROR) {
             printf(">Accion invalida.\n");
             continue;
@@ -45,9 +54,6 @@ int main()
             programIsRunning = FALSE;
             break;
         }
-
-        // Dispatch any other COMMAND
-        commandDispatch(context);
 
         // Error displayer
         errorDisplay = GetError(context->error);
