@@ -6,8 +6,6 @@
     #include <stdio.h>
     #include <stdlib.h>
 
-    //hola //
-
     Nodo* CrearNodo(int value)
     {
         Nodo* nodo = (Nodo *) malloc(sizeof(Nodo));
