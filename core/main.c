@@ -24,8 +24,10 @@ void executeProgram(Context* context) {
   context->command = getCommandByInput(context->input, &context->error);
   if (context->error == NO_ERRORS && strcmp(context->command, QUIT_COMMAND) != 0) {
       commandDispatch(context);
+      context->response = "quemado 1";
       printf("oooooo %s \n", context->response);
   }
+  context->response = "quemado 2";
 }
 
 int main()
