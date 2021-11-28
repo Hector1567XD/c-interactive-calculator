@@ -11,7 +11,7 @@
 void executeResta(Context* context)
 {
     context->error = NO_ERRORS;
-    char resultado[45] = "";
+    char * resultado = (char *) malloc(45);
 
     int pilaSize = getPilaLongitud(context->numberStack);
     if (pilaSize < 2) {
