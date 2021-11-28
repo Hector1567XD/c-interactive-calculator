@@ -52,10 +52,10 @@ int main()
 
         // Error displayer
         errorDisplay = GetError(context->error);
-        if (errorDisplay != "") printf(">%s\n", errorDisplay);
+        if (strlen(errorDisplay) > 0) printf(">%s\n", errorDisplay);
 
         // Response of Command (If is Neccesary)
-        if (context->response != "") printf(">%s\n", context->response);
+        if (strlen(context->response) > 0) printf(">%s\n", context->response);
     }
 
     return 0;
