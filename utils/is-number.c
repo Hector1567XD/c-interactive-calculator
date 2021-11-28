@@ -19,13 +19,13 @@
             if (!isdigit(s[i])) {
                 if (i > 0) {
                     // Si NO es el primer caracter
-                    if (s[i] == '.' || s[i] == ',') {
+                    if (s[i] == '.') {
                         // Si resulta ser un punto
                         if (dotQuantity < 1) {
                             // Si no se ha encontrado ningun punto hasta entonces, suma el contador y no pasa nada
                             dotQuantity++;
                         }else{
-                            // Si la cantidad de puntos encontradas es mayor que 0, retorna FALSE 
+                            // Si la cantidad de puntos encontradas es mayor que 0, retorna FALSE
                             // (Por que habrian 2 puntos en el string, los decimales tienen 1 solo)
                             return FALSE;
                         }
