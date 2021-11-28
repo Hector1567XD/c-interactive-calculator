@@ -27,5 +27,5 @@ void executeMultiplicar(Context* context)
     Apilar(context->numberStack, operacion);
 
     snprintf( resultado, 46, "%g", operacion );
-    strcpy(context->response, resultado);
+    context->response = resultado;
 }
