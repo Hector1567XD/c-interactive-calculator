@@ -31,9 +31,6 @@ void interactiveMode(Context* context) {
   int programIsRunning = TRUE;
   char* errorDisplay = "";
 
-  context->error = NO_ERRORS;
-  context->response = "";
-
   printf(">");
   getInputed(context->input, &context->error);
 
