@@ -47,21 +47,29 @@ int main()
 
         executeProgram(context);
 
+        printf("c1--%s\n", context->response);
+
         // Si detecta que ha habido un comando invalido
         if (context->error == INVALID_COMMAND_ERROR) {
             printf(">Accion invalida.\n");
             continue;
         }
 
+        printf("c2--%s\n", context->response);
+
         // Dispatch Command QUIT
         if (strcmp(context->command, QUIT_COMMAND) == 0) {
             programIsRunning = FALSE;
             break;
         }
+        
+        printf("c3--%s\n", context->response);
 
         // Error displayer
         errorDisplay = GetError(context->error);
         if (strlen(errorDisplay) > 0) printf(">%s\n", errorDisplay);
+        
+        printf("c4--%s\n", context->response);
 
         // Response of Command (If is Neccesary)
         if (strlen(context->response) > 0) printf(">%s\n", context->response);
