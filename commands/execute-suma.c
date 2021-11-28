@@ -26,6 +26,6 @@ void executeSuma(Context* context)
 
     Apilar(context->numberStack, operacion);
 
-    snprintf( resultado, 46, "%d", operacion );
+    snprintf( resultado, 46, "%lf", operacion );
     context->response = resultado;
 }
