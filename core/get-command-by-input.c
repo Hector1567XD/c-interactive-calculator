@@ -14,6 +14,7 @@ int isValidInput(char input[]) {
     if (strcmp(input, QUIT_COMMAND) == 0) return TRUE;
     if (strcmp(input, SUMA_COMMAND) == 0) return TRUE;
     if (strcmp(input, MULTIPLICAR_COMMAND) == 0) return TRUE;
+    if (strcmp(input, MULTIPLICAR_COMMAND_ALTERNATIVE) == 0) return TRUE;
     return FALSE;
 }
 
@@ -30,6 +31,7 @@ char* getCommandByInput(char *input, int *error)
     if (strcmp(input, QUIT_COMMAND) == 0) return QUIT_COMMAND;
     if (strcmp(input, SUMA_COMMAND) == 0) return SUMA_COMMAND;
     if (strcmp(input, MULTIPLICAR_COMMAND) == 0) return MULTIPLICAR_COMMAND;
+    if (strcmp(input, MULTIPLICAR_COMMAND_ALTERNATIVE) == 0) return MULTIPLICAR_COMMAND;
     if (isNumber(input)) return ADD_NUMERIC_VALUE;
 
     return IMPOSIBLE_COMMAND;
