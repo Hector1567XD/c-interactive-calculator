@@ -74,7 +74,7 @@ int main(int argQuantity, char* arg[])
       char* errorDisplay = "";
       for (int i = 0; i < argQuantity; i++) {
 
-        //context->input = arg[i];
+        strcpy(context->input, arg[i]);
 
         executeProgram(context);
 
