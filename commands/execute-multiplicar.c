@@ -6,7 +6,7 @@
 #include "../utils/include/pila.h"
 
 #include "../core/include/errors.h"
-#include "../core/include/context.h";
+#include "../core/include/context.h"
 
 void executeMultiplicar(Context* context)
 {
@@ -19,13 +19,13 @@ void executeMultiplicar(Context* context)
       return;
     }
 
-    int numeroA = TomarCimaYDesapilar(context->numberStack);
-    int numeroB = TomarCimaYDesapilar(context->numberStack);
+    double numeroA = TomarCimaYDesapilar(context->numberStack);
+    double numeroB = TomarCimaYDesapilar(context->numberStack);
 
-    int operacion = numeroA * numeroB;
+    double operacion = numeroA * numeroB;
 
     Apilar(context->numberStack, operacion);
 
-    snprintf( resultado, 46, "%d", operacion );
+    snprintf( resultado, 46, "%g", operacion );
     context->response = resultado;
 }

@@ -4,7 +4,7 @@
     #include <stdio.h>
 
     typedef struct nodo {
-        int value;
+        double value;
         struct nodo* siguiente;
     } Nodo;
 
@@ -13,15 +13,15 @@
         int longitud;
     } Pila;
 
-    Nodo* CrearNodo(int value);
+    Nodo* CrearNodo(double value);
     void DestruirPila(Pila* pila);
     Pila* CrearPila();
     void DestruirNodo(Nodo* nodo);
 
-    void Apilar(Pila* pila, int url);
+    void Apilar(Pila* pila, double url);
     void Desapilar(Pila* pila);
-    int Cima(Pila* pila);
+    double Cima(Pila* pila);
     int getPilaLongitud(Pila* pila);
-    int TomarCimaYDesapilar(Pila* pila);
+    double TomarCimaYDesapilar(Pila* pila);
 
 #endif /* pila_h */
