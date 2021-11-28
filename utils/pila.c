@@ -53,7 +53,7 @@
 
     double Cima(Pila* pila) {
         if (pila->cima == NULL)
-            return NULL;
+            return 0;
         else
             return pila->cima->value;
     }
