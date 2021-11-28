@@ -4,7 +4,6 @@
 
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
-#include "../utils/pila.c"
 
 #include "./include/commands.h"
 #include "./include/constans.h"

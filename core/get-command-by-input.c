@@ -4,7 +4,7 @@
 
 #include "../utils/include/booleans.h"
 
-#include "../utils/is-number.c"
+#include "../utils/include/is-number.h"
 
 #include "./include/commands.h"
 #include "./include/errors.h"

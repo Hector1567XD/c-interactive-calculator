@@ -4,20 +4,19 @@
 
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
-#include "../utils/pila.c"
 
-#include "../utils/is-number.c"
-#include "../utils/get-inputed.c"
+#include "../utils/include/is-number.h"
+#include "../utils/include/get-inputed.h"
 
 #include "./include/commands.h"
 #include "./include/constans.h"
 #include "./include/errors.h"
 
-#include "./get-command-by-input.c"
-#include "./command-dispatch.c"
+#include "./include/get-command-by-input.h"
+#include "./include/command-dispatch.h"
 #include "./include/context.h"
-#include "./create-program-context.c"
-#include "./get-error.c"
+#include "./include/create-program-context.h"
+#include "./include/get-error.h"
 
 int main()
 {
@@ -52,10 +51,10 @@ int main()
 
         // Error displayer
         errorDisplay = GetError(context->error);
-        if (errorDisplay != "") printf(">%s\n", errorDisplay);
+        if (strlen(errorDisplay) > 0) printf(">%s\n", errorDisplay);
 
         // Response of Command (If is Neccesary)
-        if (context->response != "") printf(">%s\n", context->response);
+        if (strlen(context->response) > 0) printf(">%s\n", context->response);
     }
 
     return 0;
