@@ -27,43 +27,48 @@ void executeProgram(Context* context) {
   }
 }
 
+void interactiveMode(Context* context) {
+  int programIsRunning = TRUE;
+  char* errorDisplay = "";
+
+  context->error = NO_ERRORS;
+  context->response = "";
+
+  printf(">");
+  getInputed(context->input, &context->error);
+
+  if(context->error == INPUT_MAX_LENGTH_ERROR)
+      printf("Error: se ha ingresado mas caracteres de los permitidos\n      solo se tomaran caracteres hasta el limite permitido (%d)\n", MAX_LENGTH);
+
+  executeProgram(context);
+
+  // Si detecta que ha habido un comando invalido
+  if (context->error == INVALID_COMMAND_ERROR) {
+    printf(">Accion invalida.\n");
+  }
+  else if (strcmp(context->command, QUIT_COMMAND) == 0) {
+    // Dispatch Command QUIT
+    programIsRunning = FALSE;
+  }else{
+    // Error displayer
+    errorDisplay = GetError(context->error);
+    if (strlen(errorDisplay) > 0) printf(">%s\n", errorDisplay);
+
+    // Response of Command (If is Neccesary)
+    if (strlen(context->response) > 0) printf(">%s\n", context->response);
+  }
+
+  // Vuelve a ejecutar el interactiveModeExecution si es que el
+  // programa sigue corriende
+  if (programIsRunning == TRUE)
+    interactiveMode(context);
+}
+
 int main()
 {
     Context* context = CreateProgramContext();
-    int programIsRunning = TRUE;
-    char* errorDisplay = "";
 
-    while (programIsRunning == TRUE) {
-        context->error = NO_ERRORS;
-        context->response = "";
-
-        printf(">");
-        getInputed(context->input, &context->error);
-
-        if(context->error == INPUT_MAX_LENGTH_ERROR)
-            printf("Error: se ha ingresado mas caracteres de los permitidos\n      solo se tomaran caracteres hasta el limite permitido (%d)\n", MAX_LENGTH);
-
-        executeProgram(context);
-
-        // Si detecta que ha habido un comando invalido
-        if (context->error == INVALID_COMMAND_ERROR) {
-            printf(">Accion invalida.\n");
-            continue;
-        }
-
-        // Dispatch Command QUIT
-        if (strcmp(context->command, QUIT_COMMAND) == 0) {
-            programIsRunning = FALSE;
-            break;
-        }
-
-        // Error displayer
-        errorDisplay = GetError(context->error);
-        if (strlen(errorDisplay) > 0) printf(">%s\n", errorDisplay);
-
-        // Response of Command (If is Neccesary)
-        if (strlen(context->response) > 0) printf(">%s\n", context->response);
-    }
+    interactiveMode(context);
 
     return 0;
 }
