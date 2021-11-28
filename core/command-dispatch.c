@@ -8,11 +8,14 @@
 
 #include "../commands/include/add-numeric-value.h"
 #include "../commands/include/execute-suma.h"
+#include "../commands/include/execute-resta.h"
 #include "../commands/include/execute-multiplicar.h"
+
 #include "./include/context.h"
 
 void commandDispatch(Context* context) {
     if (isCommand(context, ADD_NUMERIC_VALUE)) addNumericValue(context);
+    else if (isCommand(context, RESTA_COMMAND)) executeResta(context);
     else if (isCommand(context, SUMA_COMMAND)) executeSuma(context);
     else if (isCommand(context, MULTIPLICAR_COMMAND)) executeMultiplicar(context);
 }
