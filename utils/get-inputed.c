@@ -17,12 +17,13 @@
 
         /* Si NO encuentra un line break en el receiver
          * elimina el sobrante del fgetc en stdin */
-        if(!strchr(input, '\n')) {
-            *error = INPUT_MAX_LENGTH_ERROR;
-            while(fgetc(stdin)!='\n');
-        }else{
+        if(strchr(input, '\n')) {
             // Elimina el '\n' al final del receiver
             input[strcspn(input, "\n")] = 0;
+        }else{
+            // Se excedio la cantidad maxima de caracteres
+            *error = INPUT_MAX_LENGTH_ERROR;
+            while(fgetc(stdin)!='\n');//<--- LIMPIA EL SOBRANTE
         }
         fflush(stdin);
         strcpy(receiver, input);

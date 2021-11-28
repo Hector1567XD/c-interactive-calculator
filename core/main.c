@@ -5,6 +5,7 @@
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
 #include "../utils/pila.c"
+
 #include "../utils/is-number.c"
 #include "../utils/get-inputed.c"
 
@@ -20,11 +21,15 @@ int main()
     int programIsRunning = TRUE;
     Pila* pilaNumeros = CrearPila();
     char input[65] = "";
+
     int error = NO_ERRORS;
     char* command = "";
+    char* responseText = "";
 
     while (programIsRunning == TRUE) {
         error = NO_ERRORS;
+        responseText = "";
+
         printf(">");
 
         getInputed(input, &error);
@@ -45,12 +50,19 @@ int main()
         }
 
         // Dispatch any other COMMAND
-        commandDispatch(command, input, pilaNumeros, &error);
+        commandDispatch(command, input, pilaNumeros, &responseText, &error);
 
         // Error displayer
-    }
+        if (error == INSUFICIENT_VALUES_ERROR) {
+            printf(">No hay suficientes valores en la pila.\n");
+        }
 
-    printf("%d", Cima(pilaNumeros));
+        // Response of Command (If is Neccesary)
+            // TODO: Example, Result of "Suma"
+        if (responseText != "") printf(">%s\n", responseText);
+    }
 
     return 0;
 }
+
+// TODO: Bug, los primeros 3 valores que introducs son (numero, numero y +) o (numero, numero y *) entonces el "responseText" saldra blanco la primera vez

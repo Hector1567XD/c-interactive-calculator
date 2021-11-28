@@ -10,7 +10,7 @@
 #include "../core/include/commands.h"
 #include "../core/include/errors.h"
 
-void addNumericValue(Pila* pila, char* rawValue)
+void addNumericValue(Pila* pila, char* input)
 {
-    Apilar(pila, atoi(rawValue));
+    Apilar(pila, atoi(input));
 }
