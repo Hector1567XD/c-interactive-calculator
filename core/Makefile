@@ -3,9 +3,9 @@ vpath %.c ../commands:../utils
 
 TARGET = prog
 OBJ-DIR = ../obj
-programa = main.o command-dispatch.o get-error.o get-command-by-input.o\
+programa = execute-multiplicar.o get-inputed.o is-number.o pila.o\
 					 create-program-context.o add-numeric-value.o execute-suma.o\
-					 execute-multiplicar.o get-inputed.o is-number.o pila.o
+					 command-dispatch.o get-error.o get-command-by-input.o main.o
 CFLAGS = -Wall
 
 
