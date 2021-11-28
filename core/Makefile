@@ -22,4 +22,4 @@ $(OBJ-DIR)/%.o : %.c
 
 .PHONY: clean
 clean:
-	rm -f *.o $(TARGET)
+	@rm -f *.o $(TARGET)
