@@ -5,56 +5,102 @@
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
 
-#include "../utils/include/is-number.h"
 #include "../utils/include/get-inputed.h"
+#include "../utils/include/is-number.h"
 
 #include "./include/commands.h"
 #include "./include/constans.h"
 #include "./include/errors.h"
 
+#include "./include/create-program-context.h"
 #include "./include/get-command-by-input.h"
 #include "./include/command-dispatch.h"
-#include "./include/context.h"
-#include "./include/create-program-context.h"
 #include "./include/get-error.h"
+#include "./include/context.h"
 
-int main()
+void executeProgram(Context* context) {
+  context->error = NO_ERRORS;
+  context->response = "";
+  context->command = getCommandByInput(context->input, &context->error);
+  if (context->error == NO_ERRORS && strcmp(context->command, QUIT_COMMAND) != 0) {
+      commandDispatch(context);
+  }
+}
+
+void interactiveMode(Context* context) {
+  int programIsRunning = TRUE;
+  char* errorDisplay = "";
+
+  printf(">");
+  getInputed(context->input, &context->error);
+
+  if(context->error == INPUT_MAX_LENGTH_ERROR)
+      printf("Error: se ha ingresado mas caracteres de los permitidos\n      solo se tomaran caracteres hasta el limite permitido (%d)\n", MAX_LENGTH);
+
+  executeProgram(context);
+
+  // Si detecta que ha habido un comando invalido
+  if (context->error == INVALID_COMMAND_ERROR) {
+    printf(">Accion invalida.\n");
+  }
+  else if (strcmp(context->command, QUIT_COMMAND) == 0) {
+    // Dispatch Command QUIT
+    programIsRunning = FALSE;
+  }else{
+    // Error displayer
+    errorDisplay = GetError(context->error);
+    if (strlen(errorDisplay) > 0) printf(">%s\n", errorDisplay);
+
+    // Response of Command (If is Neccesary)
+    if (strlen(context->response) > 0) printf(">%s\n", context->response);
+  }
+
+  if (strlen(context->response) > 0) free(context->response);
+
+  // Vuelve a ejecutar el interactiveModeExecution si es que el
+  // programa sigue corriende
+  if (programIsRunning == TRUE)
+    interactiveMode(context);
+}
+
+int main(int argQuantity, char* arg[])
 {
     Context* context = CreateProgramContext();
-    int programIsRunning = TRUE;
-    char* errorDisplay = "";
 
-    while (programIsRunning == TRUE) {
-        context->error = NO_ERRORS;
-        context->response = "";
+    if (argQuantity < 2) {
+      interactiveMode(context);
+    }else{
+      char* errorDisplay = "";
+      char* lastResponse = "";
+      int hasError = FALSE;
+      for (int i = 1; i < argQuantity; i++) {
 
-        printf(">");
-        getInputed(context->input, &context->error);
+        strcpy(context->input, arg[i]);
+        executeProgram(context);
 
-        if(context->error == INPUT_MAX_LENGTH_ERROR)
-            printf("Error: se ha ingresado mas caracteres de los permitidos\n      solo se tomaran caracteres hasta el limite permitido (%d)\n", MAX_LENGTH);
-
-        context->command = getCommandByInput(context->input, &context->error);
         if (context->error == INVALID_COMMAND_ERROR) {
-            printf(">Accion invalida.\n");
-            continue;
-        }
+          printf("Comando o accion invalida '%s' en el argumento %i\n", context->input, i);
+          hasError = TRUE;
+          break;
+        }else if (strcmp(context->command, QUIT_COMMAND) == 0) {
+          hasError = TRUE;
+          break;
+        }else{
 
-        // Dispatch Command QUIT
-        if (strcmp(context->command, QUIT_COMMAND) == 0) {
-            programIsRunning = FALSE;
+          errorDisplay = GetError(context->error);
+          if (strlen(errorDisplay) > 0) {
+            hasError = TRUE;
+            printf("Error en argumento '%s' numero %i: %s\n", context->input, i, errorDisplay);
             break;
+          }
+
+          if (strlen(context->response) > 0) lastResponse = context->response;
         }
-
-        // Dispatch any other COMMAND
-        commandDispatch(context);
-
-        // Error displayer
-        errorDisplay = GetError(context->error);
-        if (strlen(errorDisplay) > 0) printf(">%s\n", errorDisplay);
-
-        // Response of Command (If is Neccesary)
-        if (strlen(context->response) > 0) printf(">%s\n", context->response);
+      }
+      if (strlen(lastResponse) > 0 && !hasError) {
+        printf("%s\n", lastResponse);
+        free(lastResponse);
+      }
     }
 
     return 0;

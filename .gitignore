@@ -15,3 +15,5 @@ bin/
 obj/
 ./core/main.exe
 ./core/main.o
+/core/calc
+./core/calc
