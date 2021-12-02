@@ -12,6 +12,7 @@
 #define DIVIDIR_COMMAND "/"
 #define RAIZ_COMMAND "sqrt"
 #define POTENCIA_COMMAND "^"
+#define FACTORIAL_COMMAND "!"
 
 // ESPECIAL COMMANDS
 #define NO_COMMAND "NO_COMMAND"

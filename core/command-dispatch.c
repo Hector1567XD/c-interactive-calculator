@@ -13,6 +13,7 @@
 #include "../commands/include/execute-dividir.h"
 #include "../commands/include/execute-raiz.h"
 #include "../commands/include/execute-potencia.h"
+#include "../commands/include/execute-factorial.h"
 
 #include "./include/context.h"
 
@@ -24,6 +25,7 @@ void commandDispatch(Context* context) {
     else if (isCommand(context, DIVIDIR_COMMAND)) executeDividir(context);
     else if (isCommand(context, RAIZ_COMMAND)) executeRaiz(context);
     else if (isCommand(context, POTENCIA_COMMAND)) executePotencia(context);
+    else if (isCommand(context, FACTORIAL_COMMAND)) executeFactorial(context);
 }
 
 int isCommand(Context* context, char* command) {

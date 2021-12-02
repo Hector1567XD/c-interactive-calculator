@@ -26,28 +26,25 @@ void executeFactorial(Context* context)
       return;
     }
 
-    int isInteger(double val)
-   {
-    int truncated = (int)val;
-    if ((val == truncated) == TRUE){
+    /*int truncated = (int)numeroA;
+
+    if ((numeroA == truncated) == TRUE)
      context->error = UNDEFINED; 
-      return;
-     }
-   }
- 
-    int factorial(int n)
+      return;*/
+   
+    double factorial(double  n)
     {
     if (n == 0)
-     {  
+      {  
        return 1;  
+      }
     else
       { 
        return(n * factorial(n-1));
-      }  
-     }  
+      }   
     }
 
-    double operacion = factorial;
+    double operacion = factorial(numeroA);
 
     Apilar(context->numberStack, operacion);
 
