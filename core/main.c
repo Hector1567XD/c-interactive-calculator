@@ -31,7 +31,7 @@ void interactiveMode(Context* context) {
   int programIsRunning = TRUE;
   char* errorDisplay = "";
 
-  printf(">");
+  printf("CALC>");
   getInputed(context->input, &context->error);
 
   if(context->error == INPUT_MAX_LENGTH_ERROR)

@@ -8,26 +8,46 @@
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 
-void executeDividir(Context* context)
+void executeFactorial(Context* context)
 {
     context->error = NO_ERRORS;
     char * resultado = (char *) malloc(45);
 
     int pilaSize = getPilaLongitud(context->numberStack);
-    if (pilaSize < 2) {
+    if (pilaSize == 0) {
       context->error = INSUFICIENT_VALUES_ERROR;
       return;
     }
 
     double numeroA = TomarCimaYDesapilar(context->numberStack);
-    double numeroB = TomarCimaYDesapilar(context->numberStack);
 
-    if (numeroA == 0) {
+    if (numeroA < 0) { 
       context->error = UNDEFINED;
       return;
     }
 
-    double operacion = numeroB / numeroA;
+    int isInteger(double val)
+   {
+    int truncated = (int)val;
+    if ((val == truncated) == TRUE){
+     context->error = UNDEFINED; 
+      return;
+     }
+   }
+ 
+    int factorial(int n)
+    {
+    if (n == 0)
+     {  
+       return 1;  
+    else
+      { 
+       return(n * factorial(n-1));
+      }  
+     }  
+    }
+
+    double operacion = factorial;
 
     Apilar(context->numberStack, operacion);
 

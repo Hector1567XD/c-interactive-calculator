@@ -11,6 +11,8 @@
 #include "../commands/include/execute-resta.h"
 #include "../commands/include/execute-multiplicar.h"
 #include "../commands/include/execute-dividir.h"
+#include "../commands/include/execute-raiz.h"
+#include "../commands/include/execute-potencia.h"
 
 #include "./include/context.h"
 
@@ -20,6 +22,8 @@ void commandDispatch(Context* context) {
     else if (isCommand(context, SUMA_COMMAND)) executeSuma(context);
     else if (isCommand(context, MULTIPLICAR_COMMAND)) executeMultiplicar(context);
     else if (isCommand(context, DIVIDIR_COMMAND)) executeDividir(context);
+    else if (isCommand(context, RAIZ_COMMAND)) executeRaiz(context);
+    else if (isCommand(context, POTENCIA_COMMAND)) executePotencia(context);
 }
 
 int isCommand(Context* context, char* command) {

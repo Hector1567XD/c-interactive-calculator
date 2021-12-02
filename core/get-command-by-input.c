@@ -17,6 +17,8 @@ int isValidInput(char input[]) {
     if (strcmp(input, MULTIPLICAR_COMMAND) == 0) return TRUE;
     if (strcmp(input, MULTIPLICAR_COMMAND_ALTERNATIVE) == 0) return TRUE;
     if (strcmp(input, DIVIDIR_COMMAND) == 0) return TRUE;
+    if (strcmp(input, RAIZ_COMMAND) == 0) return TRUE;
+    if (strcmp(input, POTENCIA_COMMAND) == 0) return TRUE;
     return FALSE;
 }
 
@@ -36,6 +38,8 @@ char* getCommandByInput(char *input, int *error)
     if (strcmp(input, MULTIPLICAR_COMMAND) == 0) return MULTIPLICAR_COMMAND;
     if (strcmp(input, MULTIPLICAR_COMMAND_ALTERNATIVE) == 0) return MULTIPLICAR_COMMAND;
     if (strcmp(input, DIVIDIR_COMMAND) == 0) return DIVIDIR_COMMAND;
+    if (strcmp(input, RAIZ_COMMAND) == 0) return RAIZ_COMMAND;
+    if (strcmp(input, POTENCIA_COMMAND) == 0) return POTENCIA_COMMAND;
     if (isNumber(input)) return ADD_NUMERIC_VALUE;
 
     return IMPOSIBLE_COMMAND;
