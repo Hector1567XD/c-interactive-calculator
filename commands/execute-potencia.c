@@ -23,7 +23,11 @@ void executePotencia(Context* context)
     double numeroA = TomarCimaYDesapilar(context->numberStack);
     double numeroB = TomarCimaYDesapilar(context->numberStack);
 
-    /*double pow(double x, double y) calcula la potencia de un numero elevado al segundo numero ingresado*/
+    /*if (pilaSize < 2) {
+      context->error = INSUFICIENT_VALUES_ERROR;
+      return;*/
+
+    /*double pow(double x, double y) calcula la potencia de un numero elevado(x) al segundo numero ingresado(y)*/
 
     double operacion = pow(numeroB,numeroA);
 

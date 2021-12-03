@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
@@ -26,12 +27,14 @@ void executeFactorial(Context* context)
       return;
     }
 
-    /*int truncated = (int)numeroA;
+    double ptr;
+    double decimal = modf(numeroA, &ptr);
 
-    if ((numeroA == truncated) == TRUE)
-     context->error = UNDEFINED; 
-      return;*/
-   
+    if (decimal != 0){ //revisar(?)
+      context->error = UNDEFINED;
+      return;
+    }
+
     double factorial(double  n)
     {
     if (n == 0)
