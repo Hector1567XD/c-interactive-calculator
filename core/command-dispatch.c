@@ -11,6 +11,7 @@
 #include "../commands/include/execute-multiplicar.h"
 #include "../commands/include/execute-binary.h"
 #include "../commands/include/execute-octal.h"
+#include "../commands/include/execute-hexadecimal.h"
 #include "./include/context.h"
 
 void commandDispatch(Context* context) {
@@ -19,7 +20,7 @@ void commandDispatch(Context* context) {
     else if (isCommand(context, MULTIPLICAR_COMMAND)) executeMultiplicar(context);
     else if (isCommand(context, DEC_BINARY_COMMAND)) executeBinary(context);
     else if (isCommand(context, DEC_OCTAL_COMMAND)) executeOctal(context);
-    else if (isCommand(context, DEC_HEXA_COMMAND)) executeOctal(context);
+    else if (isCommand(context, DEC_HEXA_COMMAND)) executeHexadecimal(context);
 }
 
 int isCommand(Context* context, char* command) {
