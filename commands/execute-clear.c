@@ -8,7 +8,7 @@
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 
-void executeDisplay(Context* context)
+void executeClear(Context* context)
 {
     context->error = NO_ERRORS;
     char * resultado = (char *) malloc(45);
@@ -19,20 +19,6 @@ void executeDisplay(Context* context)
       return;
     }
 
-    int i; 
-    double array[pilaSize];
-
-    for(i = 0; i < pilaSize; i++){
-    
-    double numeroA = TomarCimaYDesapilar(context->numberStack);
-    array[i] = numeroA;
-    
-    printf("%g\n",numeroA);
-  }
-
-   for(i = pilaSize - 1; i >= 0; i--){
-
-    Apilar(context->numberStack, array[i]);
-   } 
-
+   DestruirPila(context->numberStack);
+   context->numberStack = CrearPila();
 }

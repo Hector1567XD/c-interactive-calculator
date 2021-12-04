@@ -16,6 +16,7 @@
 #include "../commands/include/execute-factorial.h"
 #include "../commands/include/execute-cima.h"
 #include "../commands/include/execute-display.h"
+#include "../commands/include/execute-clear.h"
 
 #include "./include/context.h"
 
@@ -30,6 +31,7 @@ void commandDispatch(Context* context) {
     else if (isCommand(context, FACTORIAL_COMMAND)) executeFactorial(context);
     else if (isCommand(context, CIMA_COMMAND)) executeCima(context);
     else if (isCommand(context, DISPLAY_COMMAND)) executeDisplay(context);
+    else if (isCommand(context, CLEAR_COMMAND)) executeClear(context);
 }
 
 int isCommand(Context* context, char* command) {

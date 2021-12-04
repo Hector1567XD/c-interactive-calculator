@@ -22,6 +22,7 @@ int isValidInput(char input[]) {
     if (strcmp(input, FACTORIAL_COMMAND) == 0) return TRUE;
     if (strcmp(input, CIMA_COMMAND) == 0) return TRUE;
     if (strcmp(input, DISPLAY_COMMAND) == 0) return TRUE;
+    if (strcmp(input, CLEAR_COMMAND) == 0) return TRUE;
 
     return FALSE;
 }
@@ -47,6 +48,7 @@ char* getCommandByInput(char *input, int *error)
     if (strcmp(input, FACTORIAL_COMMAND) == 0) return FACTORIAL_COMMAND;
     if (strcmp(input, CIMA_COMMAND) == 0) return CIMA_COMMAND;
     if (strcmp(input, DISPLAY_COMMAND) == 0) return DISPLAY_COMMAND;
+    if (strcmp(input, CLEAR_COMMAND) == 0) return CLEAR_COMMAND;
 
     if (isNumber(input)) return ADD_NUMERIC_VALUE;
 
