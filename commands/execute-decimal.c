@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
@@ -8,19 +9,19 @@
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 
-int integerDecimalToBinary(int decimalNumber) {
-  int i = 1, binaryNumber = 0;
+int integerBinaryToDecimal(int binaryNumber) {
+  int i = 1, decimalNumber = 0;
 
-  while (decimalNumber != 0) {
-    binaryNumber += (decimalNumber % 2) * i;
-    decimalNumber /= 2;
-    i *= 10;
+  while (binaryNumber != 0) {
+    decimalNumber += (binaryNumber % 10) * i;
+    binaryNumber /= 10;
+    i *= 2;
   }
 
-  return binaryNumber;
+  return decimalNumber;
 }
 
-void executeBinary(Context* context)
+void executeDecimal(Context* context)
 {
     context->error = NO_ERRORS;
     char * resultado = (char *) malloc(45);
@@ -33,7 +34,7 @@ void executeBinary(Context* context)
 
     int numero = TomarCimaYDesapilar(context->numberStack);
 
-    int operacion = integerDecimalToBinary(numero);
+    int operacion = integerBinaryToDecimal(numero);
 
     Apilar(context->numberStack, operacion);
 

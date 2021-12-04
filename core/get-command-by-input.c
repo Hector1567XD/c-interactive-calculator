@@ -18,6 +18,8 @@ int isValidInput(char input[]) {
     if (strcmp(input, DEC_BINARY_COMMAND) == 0) return TRUE;
     if (strcmp(input, DEC_OCTAL_COMMAND) == 0) return TRUE;
     if (strcmp(input, DEC_HEXA_COMMAND) == 0) return TRUE;
+    if (strcmp(input, BINARY_DECIMAL_COMMAND) == 0) return TRUE;
+    if (strcmp(input, OCTAL_DECIMAL_COMMAND) == 0) return TRUE;
     return FALSE;
 }
 
@@ -38,6 +40,8 @@ char* getCommandByInput(char *input, int *error)
     if (strcmp(input, DEC_BINARY_COMMAND) == 0) return DEC_BINARY_COMMAND;
     if (strcmp(input, DEC_OCTAL_COMMAND) == 0) return DEC_OCTAL_COMMAND;
     if (strcmp(input, DEC_HEXA_COMMAND) == 0) return DEC_HEXA_COMMAND;
+    if (strcmp(input, BINARY_DECIMAL_COMMAND) == 0) return BINARY_DECIMAL_COMMAND;
+    if (strcmp(input, OCTAL_DECIMAL_COMMAND) == 0) return OCTAL_DECIMAL_COMMAND;
     if (isNumber(input)) return ADD_NUMERIC_VALUE;
 
     return IMPOSIBLE_COMMAND;
