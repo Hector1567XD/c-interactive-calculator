@@ -14,6 +14,7 @@
 #include "../commands/include/execute-logaritmo.h"
 #include "../commands/include/execute-arccoseno.h"
 #include "../commands/include/execute-arctan.h"
+#include "../commands/include/execute-swap.h"
 #include "./include/context.h"
 
 void commandDispatch(Context* context) {
@@ -27,6 +28,7 @@ void commandDispatch(Context* context) {
     else if (isCommand(context, ARCSENO_COMMAND)) executeArcseno(context);
     else if (isCommand(context, ARCCOSENO_COMMAND)) executeArccoseno(context);
     else if (isCommand(context, ARCTAN_COMMAND)) executeArctan(context);
+    else if (isCommand(context, SWAP_COMMAND)) executeSwap(context);
 }
 
 int isCommand(Context* context, char* command) {

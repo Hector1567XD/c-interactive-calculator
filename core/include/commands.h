@@ -15,6 +15,7 @@
 #define ARCSENO_COMMAND "arcseno"
 #define ARCCOSENO_COMMAND "arccoseno"
 #define ARCTAN_COMMAND "arctan"
+#define SWAP_COMMAND "swp"
 
 
 // ESPECIAL COMMANDS
