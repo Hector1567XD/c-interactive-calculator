@@ -20,16 +20,20 @@ void executePotencia(Context* context)
       return;
     }
 
-    double numeroA = TomarCimaYDesapilar(context->numberStack);
-    double numeroB = TomarCimaYDesapilar(context->numberStack);
+    double numeroA = TomarCimaYDesapilar(context->numberStack); //exponente
+    double numeroB = TomarCimaYDesapilar(context->numberStack); //base
 
-    /*if (pilaSize < 2) {
-      context->error = INSUFICIENT_VALUES_ERROR;
-      return;*/
+    double operacion = 0;
 
-    /*double pow(double x, double y) calcula la potencia de un numero elevado(x) al segundo numero ingresado(y)*/
+    if (numeroA < 0){
+     numeroA = numeroA * -1;
+     operacion = 1/(pow(numeroB,numeroA)); 
+    }
+    else{
+     operacion = pow(numeroB,numeroA);
+    }
 
-    double operacion = pow(numeroB,numeroA);
+    /*double pow(double x, double y) calcula la potencia de un numero(x) elevado a un segundo numero ingresado(y)*/
 
     Apilar(context->numberStack, operacion);
 

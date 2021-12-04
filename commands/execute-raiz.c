@@ -22,7 +22,7 @@ void executeRaiz(Context* context)
 
     double numeroA = TomarCimaYDesapilar(context->numberStack);
 
-    if (numeroA < 0) { ///<-------revisar
+    if (numeroA < 0) { 
       context->error = UNDEFINED;
       return;
     }

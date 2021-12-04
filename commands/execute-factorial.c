@@ -22,7 +22,7 @@ void executeFactorial(Context* context)
 
     double numeroA = TomarCimaYDesapilar(context->numberStack);
 
-    if (numeroA < 0) { 
+    if (numeroA < 0){ 
       context->error = UNDEFINED;
       return;
     }
@@ -35,16 +35,13 @@ void executeFactorial(Context* context)
       return;
     }
 
-    double factorial(double  n)
-    {
-    if (n == 0)
-      {  
+    double factorial(double  n){
+     if (n == 0){  
        return 1;  
-      }
-    else
-      { 
+     }
+     else{ 
        return(n * factorial(n-1));
-      }   
+     }   
     }
 
     double operacion = factorial(numeroA);
