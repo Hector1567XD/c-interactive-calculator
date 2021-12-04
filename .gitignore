@@ -17,3 +17,5 @@ obj/
 ./core/main.o
 /core/calc
 ./core/calc
+./calc
+calc
