@@ -8,19 +8,19 @@
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 
-int integerDecimalToBinary(int decimalNumber) {
-  int i = 1, binaryNumber = 0;
+int integerDecimalToOctal(int decimalNumber) {
+    int i = 1, octalNumber = 0;
 
-  while (decimalNumber > 0) {
-    binaryNumber += (decimalNumber % 2) * i;
-    decimalNumber /= 2;
-    i *= 10;
-  }
+    while (decimalNumber != 0) {
+        octalNumber += (decimalNumber % 8) * i;
+        decimalNumber /= 8;
+        i *= 10;
+    }
 
-  return binaryNumber;
+    return octalNumber;
 }
 
-void executeBinary(Context* context)
+void executeOctal(Context* context)
 {
     context->error = NO_ERRORS;
     char * resultado = (char *) malloc(45);
@@ -33,7 +33,7 @@ void executeBinary(Context* context)
 
     int numero = TomarCimaYDesapilar(context->numberStack);
 
-    int operacion = integerDecimalToBinary(numero);
+    int operacion = integerDecimalToOctal(numero);
 
     Apilar(context->numberStack, operacion);
 
