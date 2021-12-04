@@ -9,12 +9,16 @@
 #include "../commands/include/add-numeric-value.h"
 #include "../commands/include/execute-suma.h"
 #include "../commands/include/execute-multiplicar.h"
+#include "../commands/include/execute-binary.h"
 #include "./include/context.h"
 
 void commandDispatch(Context* context) {
     if (isCommand(context, ADD_NUMERIC_VALUE)) addNumericValue(context);
     else if (isCommand(context, SUMA_COMMAND)) executeSuma(context);
     else if (isCommand(context, MULTIPLICAR_COMMAND)) executeMultiplicar(context);
+    else if (isCommand(context, DEC_BINARY_COMMAND)) executeBinary(context);
+    else if (isCommand(context, DEC_OCTAL_COMMAND)) executeBinary(context);
+    else if (isCommand(context, DEC_HEXA_COMMAND)) executeBinary(context);
 }
 
 int isCommand(Context* context, char* command) {
