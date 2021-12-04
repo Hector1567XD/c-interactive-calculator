@@ -63,7 +63,7 @@ void interactiveMode(Context* context) {
     interactiveMode(context);
 }
 
-void shellMode(Context* context) {
+void shellMode(Context* context, int argQuantity, char* arg[]) {
   char* errorDisplay = "";
   char* lastResponse = "";
   int hasError = FALSE;
@@ -104,7 +104,7 @@ int main(int argQuantity, char* arg[])
     if (argQuantity < 2) {
       interactiveMode(context);
     }else{
-      shellMode(context);
+      shellMode(context, argQuantity, arg);
     }
 
     return 0;
