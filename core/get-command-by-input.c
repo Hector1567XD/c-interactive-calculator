@@ -15,6 +15,13 @@ int isValidInput(char input[]) {
     if (strcmp(input, SUMA_COMMAND) == 0) return TRUE;
     if (strcmp(input, MULTIPLICAR_COMMAND) == 0) return TRUE;
     if (strcmp(input, MULTIPLICAR_COMMAND_ALTERNATIVE) == 0) return TRUE;
+    if (strcmp(input, SENO_COMMAND) == 0) return TRUE;
+    if (strcmp(input, COSENO_COMMAND) == 0) return TRUE;
+    if (strcmp(input, TANGENTE_COMMAND) == 0) return TRUE;
+    if (strcmp(input, LOGARITMO_COMMAND) == 0) return TRUE;
+    if (strcmp(input, ARCSENO_COMMAND) == 0) return TRUE;
+    if (strcmp(input, ARCCOSENO_COMMAND) == 0) return TRUE;
+    if (strcmp(input, ARCTAN_COMMAND) == 0) return TRUE;
     return FALSE;
 }
 
@@ -32,6 +39,13 @@ char* getCommandByInput(char *input, int *error)
     if (strcmp(input, SUMA_COMMAND) == 0) return SUMA_COMMAND;
     if (strcmp(input, MULTIPLICAR_COMMAND) == 0) return MULTIPLICAR_COMMAND;
     if (strcmp(input, MULTIPLICAR_COMMAND_ALTERNATIVE) == 0) return MULTIPLICAR_COMMAND;
+    if (strcmp(input, SENO_COMMAND) == 0) return SENO_COMMAND;
+    if (strcmp(input, COSENO_COMMAND) == 0) return COSENO_COMMAND;
+    if (strcmp(input, TANGENTE_COMMAND) == 0) return TANGENTE_COMMAND;
+    if (strcmp(input, LOGARITMO_COMMAND) == 0) return LOGARITMO_COMMAND;
+    if (strcmp(input, ARCSENO_COMMAND) == 0) return ARCSENO_COMMAND;
+    if (strcmp(input, ARCCOSENO_COMMAND) == 0) return ARCCOSENO_COMMAND;
+    if (strcmp(input, ARCTAN_COMMAND) == 0) return ARCTAN_COMMAND;
     if (isNumber(input)) return ADD_NUMERIC_VALUE;
 
     return IMPOSIBLE_COMMAND;

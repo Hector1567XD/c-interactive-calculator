@@ -8,6 +8,14 @@
 #define SUMA_COMMAND "+"
 #define MULTIPLICAR_COMMAND "*"
 #define MULTIPLICAR_COMMAND_ALTERNATIVE "x"
+#define SENO_COMMAND "sin"
+#define COSENO_COMMAND "cos"
+#define TANGENTE_COMMAND "tan"
+#define LOGARITMO_COMMAND "log"
+#define ARCSENO_COMMAND "arcseno"
+#define ARCCOSENO_COMMAND "arccoseno"
+#define ARCTAN_COMMAND "arctan"
+
 
 // ESPECIAL COMMANDS
 #define NO_COMMAND "NO_COMMAND"

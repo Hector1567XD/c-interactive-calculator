@@ -6,5 +6,6 @@
 #define INVALID_COMMAND_ERROR 2
 
 #define INSUFICIENT_VALUES_ERROR 3
-
+#define DOMAIN_ERROR 4
+#define LOG_ERROR 5
 #endif

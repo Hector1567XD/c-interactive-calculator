@@ -63,7 +63,7 @@
     }
 
     double TomarCimaYDesapilar(Pila* pila) {
-        int valor = Cima(pila);
+        double valor = Cima(pila);
         Desapilar(pila);
         return valor;
     }
