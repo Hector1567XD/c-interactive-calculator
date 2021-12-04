@@ -7,5 +7,6 @@
 char* GetError(int errorCode)
 {
     if (errorCode == INSUFICIENT_VALUES_ERROR) return "No hay suficientes valores en la pila.";
+    if (errorCode == INSUFICIENT_VALUES_IN_MEMORY_ERROR) return "No hay suficientes valores en la pila de memoria.";
     return "";
 }

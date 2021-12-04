@@ -7,6 +7,7 @@
       char* response;
       int error;
       Pila* numberStack;
+      Pila* memoryStack;
   } Context;
 
 #endif
