@@ -11,6 +11,8 @@
 #include "../commands/include/execute-multiplicar.h"
 #include "../commands/include/execute-memory-recall.h"
 #include "../commands/include/execute-memory-store.h"
+#include "../commands/include/execute-memory-suma.h"
+#include "../commands/include/execute-memory-resta.h"
 #include "./include/context.h"
 
 void commandDispatch(Context* context) {
@@ -19,6 +21,8 @@ void commandDispatch(Context* context) {
     else if (isCommand(context, MULTIPLICAR_COMMAND)) executeMultiplicar(context);
     else if (isCommand(context, MEMORY_STORE_COMMAND)) executeMemoryStore(context);
     else if (isCommand(context, MEMORY_RECALL_COMMAND)) executeMemoryRecall(context);
+    else if (isCommand(context, MEMORY_SUMA_COMMAND)) executeMemorySuma(context);
+    else if (isCommand(context, MEMORY_RESTA_COMMAND)) executeMemoryResta(context);
 }
 
 int isCommand(Context* context, char* command) {

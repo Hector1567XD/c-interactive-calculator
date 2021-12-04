@@ -17,8 +17,11 @@ int isValidInput(char input[]) {
     if (strcmp(input, MULTIPLICAR_COMMAND_ALTERNATIVE) == 0) return TRUE;
     if (strcmp(input, MEMORY_STORE_COMMAND) == 0) return TRUE;
     if (strcmp(input, MEMORY_RECALL_COMMAND) == 0) return TRUE;
+    if (strcmp(input, MEMORY_SUMA_COMMAND) == 0) return TRUE;
+    if (strcmp(input, MEMORY_RESTA_COMMAND) == 0) return TRUE;
     return FALSE;
 }
+
 
 char* getCommandByInput(char *input, int *error)
 {
@@ -36,6 +39,8 @@ char* getCommandByInput(char *input, int *error)
     if (strcmp(input, MULTIPLICAR_COMMAND_ALTERNATIVE) == 0) return MULTIPLICAR_COMMAND;
     if (strcmp(input, MEMORY_STORE_COMMAND) == 0) return MEMORY_STORE_COMMAND;
     if (strcmp(input, MEMORY_RECALL_COMMAND) == 0) return MEMORY_RECALL_COMMAND;
+    if (strcmp(input, MEMORY_SUMA_COMMAND) == 0) return MEMORY_SUMA_COMMAND;
+    if (strcmp(input, MEMORY_RESTA_COMMAND) == 0) return MEMORY_RESTA_COMMAND;
     if (isNumber(input)) return ADD_NUMERIC_VALUE;
 
     return IMPOSIBLE_COMMAND;
