@@ -8,6 +8,5 @@
 #define INSUFICIENT_VALUES_ERROR 3
 
 #define UNDEFINED 4
-#define TOO_MANY_VALUES 5
 
 #endif

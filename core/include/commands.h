@@ -13,6 +13,10 @@
 #define RAIZ_COMMAND "sqrt"
 #define POTENCIA_COMMAND "^"
 #define FACTORIAL_COMMAND "!"
+#define CIMA_COMMAND "RCL" 
+#define DISPLAY_COMMAND "DSP"
+
+
 
 // ESPECIAL COMMANDS
 #define NO_COMMAND "NO_COMMAND"
