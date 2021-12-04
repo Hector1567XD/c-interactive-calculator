@@ -1,5 +1,5 @@
-vpath %.h ./include:../utils/include
-vpath %.c ../commands:../utils
+vpath %.h ./core/include:./utils/include:./utils/include
+vpath %.c ./core:./commands:./utils
 
 TARGET = calc
 programa = execute-multiplicar.o get-inputed.o is-number.o pila.o\
