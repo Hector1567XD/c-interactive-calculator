@@ -8,7 +8,15 @@
 
 #include "../commands/include/add-numeric-value.h"
 #include "../commands/include/execute-suma.h"
+#include "../commands/include/execute-resta.h"
 #include "../commands/include/execute-multiplicar.h"
+#include "../commands/include/execute-dividir.h"
+#include "../commands/include/execute-raiz.h"
+#include "../commands/include/execute-potencia.h"
+#include "../commands/include/execute-factorial.h"
+#include "../commands/include/execute-cima.h"
+#include "../commands/include/execute-display.h"
+#include "../commands/include/execute-clear.h"
 #include "../commands/include/execute-memory-recall.h"
 #include "../commands/include/execute-memory-store.h"
 #include "../commands/include/execute-memory-suma.h"
@@ -28,8 +36,16 @@
 
 void commandDispatch(Context* context) {
     if (isCommand(context, ADD_NUMERIC_VALUE)) addNumericValue(context);
+    else if (isCommand(context, RESTA_COMMAND)) executeResta(context);
     else if (isCommand(context, SUMA_COMMAND)) executeSuma(context);
     else if (isCommand(context, MULTIPLICAR_COMMAND)) executeMultiplicar(context);
+    else if (isCommand(context, DIVIDIR_COMMAND)) executeDividir(context);
+    else if (isCommand(context, RAIZ_COMMAND)) executeRaiz(context);
+    else if (isCommand(context, POTENCIA_COMMAND)) executePotencia(context);
+    else if (isCommand(context, FACTORIAL_COMMAND)) executeFactorial(context);
+    else if (isCommand(context, CIMA_COMMAND)) executeCima(context);
+    else if (isCommand(context, DISPLAY_COMMAND)) executeDisplay(context);
+    else if (isCommand(context, CLEAR_COMMAND)) executeClear(context);
     else if (isCommand(context, MEMORY_STORE_COMMAND)) executeMemoryStore(context);
     else if (isCommand(context, MEMORY_RECALL_COMMAND)) executeMemoryRecall(context);
     else if (isCommand(context, MEMORY_SUMA_COMMAND)) executeMemorySuma(context);
@@ -47,7 +63,6 @@ void commandDispatch(Context* context) {
     else if (isCommand(context, ARCCOSENO_COMMAND)) executeArccoseno(context);
     else if (isCommand(context, ARCTAN_COMMAND)) executeArctan(context);
     else if (isCommand(context, SWAP_COMMAND)) executeSwap(context);
-
 }
 
 int isCommand(Context* context, char* command) {

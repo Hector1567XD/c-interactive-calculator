@@ -20,16 +20,16 @@ void executeLogaritmo(Context* context)
       return;
     }
 
-    double numeroA = Cima(context->numberStack);
-    if (numeroA <= 0) {
+    double numero = Cima(context->numberStack);
+    if (numero <= 0) {
       context->error = DOMAIN_LOG_ERROR;
       return;
     }
 
-    double operacion = log10(numeroA);
+    double operacion = log10(numero);
 
     Apilar(context->numberStack, operacion);
 
-    snprintf( resultado, 46, "%f", operacion );
+    snprintf( resultado, 46, "%g", operacion );
     context->response = resultado;
 }

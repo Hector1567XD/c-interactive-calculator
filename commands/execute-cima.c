@@ -8,24 +8,20 @@
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 
-void executeSuma(Context* context)
+void executeCima(Context* context)
 {
     context->error = NO_ERRORS;
     char * resultado = (char *) malloc(45);
 
     int pilaSize = getPilaLongitud(context->numberStack);
-    if (pilaSize < 2) {
+    if (pilaSize == 0) {
       context->error = INSUFICIENT_VALUES_ERROR;
       return;
     }
 
-    double numeroA = TomarCimaYDesapilar(context->numberStack);
-    double numeroB = TomarCimaYDesapilar(context->numberStack);
+    double numero = TomarCimaYDesapilar(context->numberStack);
+    Apilar(context->numberStack, numero);
 
-    double operacion = numeroA + numeroB;
-
-    Apilar(context->numberStack, operacion);
-
-    snprintf( resultado, 46, "%g", operacion );
+    snprintf( resultado, 46, "%g", numero);
     context->response = resultado;
 }

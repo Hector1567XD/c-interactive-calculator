@@ -13,8 +13,16 @@ int isValidInput(char input[]) {
     if (isNumber(input)) return TRUE;
     if (strcmp(input, QUIT_COMMAND) == 0) return TRUE;
     if (strcmp(input, SUMA_COMMAND) == 0) return TRUE;
+    if (strcmp(input, RESTA_COMMAND) == 0) return TRUE;
     if (strcmp(input, MULTIPLICAR_COMMAND) == 0) return TRUE;
     if (strcmp(input, MULTIPLICAR_COMMAND_ALTERNATIVE) == 0) return TRUE;
+    if (strcmp(input, DIVIDIR_COMMAND) == 0) return TRUE;
+    if (strcmp(input, RAIZ_COMMAND) == 0) return TRUE;
+    if (strcmp(input, POTENCIA_COMMAND) == 0) return TRUE;
+    if (strcmp(input, FACTORIAL_COMMAND) == 0) return TRUE;
+    if (strcmp(input, CIMA_COMMAND) == 0) return TRUE;
+    if (strcmp(input, DISPLAY_COMMAND) == 0) return TRUE;
+    if (strcmp(input, CLEAR_COMMAND) == 0) return TRUE;
     if (strcmp(input, MEMORY_STORE_COMMAND) == 0) return TRUE;
     if (strcmp(input, MEMORY_RECALL_COMMAND) == 0) return TRUE;
     if (strcmp(input, MEMORY_SUMA_COMMAND) == 0) return TRUE;
@@ -37,8 +45,7 @@ int isValidInput(char input[]) {
 }
 
 
-char* getCommandByInput(char *input, int *error)
-{
+char* getCommandByInput(char *input, int *error) {
     *error = NO_ERRORS;
 
     if (!isValidInput(input)) {
@@ -48,8 +55,16 @@ char* getCommandByInput(char *input, int *error)
 
     if (strcmp(input, QUIT_COMMAND) == 0) return QUIT_COMMAND;
     if (strcmp(input, SUMA_COMMAND) == 0) return SUMA_COMMAND;
+    if (strcmp(input, RESTA_COMMAND) == 0) return RESTA_COMMAND;
     if (strcmp(input, MULTIPLICAR_COMMAND) == 0) return MULTIPLICAR_COMMAND;
     if (strcmp(input, MULTIPLICAR_COMMAND_ALTERNATIVE) == 0) return MULTIPLICAR_COMMAND;
+    if (strcmp(input, DIVIDIR_COMMAND) == 0) return DIVIDIR_COMMAND;
+    if (strcmp(input, RAIZ_COMMAND) == 0) return RAIZ_COMMAND;
+    if (strcmp(input, POTENCIA_COMMAND) == 0) return POTENCIA_COMMAND;
+    if (strcmp(input, FACTORIAL_COMMAND) == 0) return FACTORIAL_COMMAND;
+    if (strcmp(input, CIMA_COMMAND) == 0) return CIMA_COMMAND;
+    if (strcmp(input, DISPLAY_COMMAND) == 0) return DISPLAY_COMMAND;
+    if (strcmp(input, CLEAR_COMMAND) == 0) return CLEAR_COMMAND;
     if (strcmp(input, MEMORY_STORE_COMMAND) == 0) return MEMORY_STORE_COMMAND;
     if (strcmp(input, MEMORY_RECALL_COMMAND) == 0) return MEMORY_RECALL_COMMAND;
     if (strcmp(input, MEMORY_SUMA_COMMAND) == 0) return MEMORY_SUMA_COMMAND;
@@ -71,10 +86,3 @@ char* getCommandByInput(char *input, int *error)
 
     return IMPOSIBLE_COMMAND;
 }
-
-/*
-    TODO:
-    int stringEqual(s1, s2) {
-        return (strcmp(s, "-") == 0);
-    }
-*/
