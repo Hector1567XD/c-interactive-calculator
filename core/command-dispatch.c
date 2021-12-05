@@ -9,6 +9,10 @@
 #include "../commands/include/add-numeric-value.h"
 #include "../commands/include/execute-suma.h"
 #include "../commands/include/execute-multiplicar.h"
+#include "../commands/include/execute-memory-recall.h"
+#include "../commands/include/execute-memory-store.h"
+#include "../commands/include/execute-memory-suma.h"
+#include "../commands/include/execute-memory-resta.h"
 #include "../commands/include/execute-binary.h"
 #include "../commands/include/execute-octal.h"
 #include "../commands/include/execute-hexadecimal.h"
@@ -26,6 +30,10 @@ void commandDispatch(Context* context) {
     if (isCommand(context, ADD_NUMERIC_VALUE)) addNumericValue(context);
     else if (isCommand(context, SUMA_COMMAND)) executeSuma(context);
     else if (isCommand(context, MULTIPLICAR_COMMAND)) executeMultiplicar(context);
+    else if (isCommand(context, MEMORY_STORE_COMMAND)) executeMemoryStore(context);
+    else if (isCommand(context, MEMORY_RECALL_COMMAND)) executeMemoryRecall(context);
+    else if (isCommand(context, MEMORY_SUMA_COMMAND)) executeMemorySuma(context);
+    else if (isCommand(context, MEMORY_RESTA_COMMAND)) executeMemoryResta(context);
     else if (isCommand(context, DEC_BINARY_COMMAND)) executeBinary(context);
     else if (isCommand(context, DEC_OCTAL_COMMAND)) executeOctal(context);
     else if (isCommand(context, DEC_HEXA_COMMAND)) executeHexadecimal(context);

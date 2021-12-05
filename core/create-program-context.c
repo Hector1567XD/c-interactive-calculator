@@ -15,6 +15,7 @@ Context* CreateProgramContext()
 {
     Context* context = (Context *) malloc(sizeof(Context));
     context->numberStack = CrearPila();
+    context->memoryStack = CrearPila();
     context->command = NO_COMMAND;
     context->response = "";
     context->error = NO_ERRORS;

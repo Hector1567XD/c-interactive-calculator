@@ -15,6 +15,10 @@ int isValidInput(char input[]) {
     if (strcmp(input, SUMA_COMMAND) == 0) return TRUE;
     if (strcmp(input, MULTIPLICAR_COMMAND) == 0) return TRUE;
     if (strcmp(input, MULTIPLICAR_COMMAND_ALTERNATIVE) == 0) return TRUE;
+    if (strcmp(input, MEMORY_STORE_COMMAND) == 0) return TRUE;
+    if (strcmp(input, MEMORY_RECALL_COMMAND) == 0) return TRUE;
+    if (strcmp(input, MEMORY_SUMA_COMMAND) == 0) return TRUE;
+    if (strcmp(input, MEMORY_RESTA_COMMAND) == 0) return TRUE;
     if (strcmp(input, DEC_BINARY_COMMAND) == 0) return TRUE;
     if (strcmp(input, DEC_OCTAL_COMMAND) == 0) return TRUE;
     if (strcmp(input, DEC_HEXA_COMMAND) == 0) return TRUE;
@@ -32,6 +36,7 @@ int isValidInput(char input[]) {
     return FALSE;
 }
 
+
 char* getCommandByInput(char *input, int *error)
 {
     *error = NO_ERRORS;
@@ -45,6 +50,10 @@ char* getCommandByInput(char *input, int *error)
     if (strcmp(input, SUMA_COMMAND) == 0) return SUMA_COMMAND;
     if (strcmp(input, MULTIPLICAR_COMMAND) == 0) return MULTIPLICAR_COMMAND;
     if (strcmp(input, MULTIPLICAR_COMMAND_ALTERNATIVE) == 0) return MULTIPLICAR_COMMAND;
+    if (strcmp(input, MEMORY_STORE_COMMAND) == 0) return MEMORY_STORE_COMMAND;
+    if (strcmp(input, MEMORY_RECALL_COMMAND) == 0) return MEMORY_RECALL_COMMAND;
+    if (strcmp(input, MEMORY_SUMA_COMMAND) == 0) return MEMORY_SUMA_COMMAND;
+    if (strcmp(input, MEMORY_RESTA_COMMAND) == 0) return MEMORY_RESTA_COMMAND;
     if (strcmp(input, SENO_COMMAND) == 0) return SENO_COMMAND;
     if (strcmp(input, COSENO_COMMAND) == 0) return COSENO_COMMAND;
     if (strcmp(input, TANGENTE_COMMAND) == 0) return TANGENTE_COMMAND;

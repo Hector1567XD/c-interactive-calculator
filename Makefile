@@ -2,8 +2,11 @@ vpath %.h ./core/include:./utils/include:./utils/include
 vpath %.c ./core:./commands:./utils
 
 TARGET = calc
-programa = execute-multiplicar.o get-inputed.o is-number.o pila.o execute-tangente.o execute-logaritmo.o execute-arctan.o execute-swap.o\
-					 create-program-context.o add-numeric-value.o execute-suma.o execute-coseno.o execute-arccoseno.o execute-seno.o execute-arcseno.o\
+programa = execute-multiplicar.o get-inputed.o is-number.o pila.o\
+					 execute-tangente.o execute-logaritmo.o execute-arctan.o execute-swap.o\
+					 create-program-context.o add-numeric-value.o execute-suma.o\
+					 execute-coseno.o execute-arccoseno.o execute-seno.o execute-arcseno.o\
+					 execute-memory-recall.o execute-memory-store.o execute-memory-suma.o execute-memory-resta.o\
 					 command-dispatch.o get-error.o get-command-by-input.o\
 					 execute-program.o interactive-mode.o shell-mode.o main.o
 CFLAGS = -Wall
