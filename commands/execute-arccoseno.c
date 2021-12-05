@@ -5,17 +5,11 @@
 
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
+#include "../utils/include/string-formating-utils.h"
 
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 #define PI 3.14159265
-
-char* formatDoubleToString(double number) {
-  char * resultado = (char *) malloc(45);
-  snprintf( resultado, 46, "%g", number );
-  return resultado;
-}
-
 
 void executeArccoseno(Context* context)
 {
@@ -39,5 +33,5 @@ void executeArccoseno(Context* context)
 
     Apilar(context->numberStack, operacion);
 
-    context->response = formatDoubleToString(operacion);
+    context->response = formatDoubleToString("%g", operacion);
 }
