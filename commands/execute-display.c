@@ -11,7 +11,8 @@
 void executeDisplay(Context* context) {
     context->error = NO_ERRORS;
 
-    if (getPilaLongitud(context->numberStack) == 0) {
+    int pilaSize = getPilaLongitud(context->numberStack);
+    if (pilaSize == 0) {
       context->error = INSUFICIENT_VALUES_ERROR;
       return;
     }
