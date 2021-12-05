@@ -10,7 +10,6 @@
 #include "../commands/include/execute-suma.h"
 #include "../commands/include/execute-resta.h"
 #include "../commands/include/execute-multiplicar.h"
-<<<<<<< HEAD
 #include "../commands/include/execute-dividir.h"
 #include "../commands/include/execute-raiz.h"
 #include "../commands/include/execute-potencia.h"
@@ -18,15 +17,12 @@
 #include "../commands/include/execute-cima.h"
 #include "../commands/include/execute-display.h"
 #include "../commands/include/execute-clear.h"
-
-=======
 #include "../commands/include/execute-coseno.h"
 #include "../commands/include/execute-tangente.h"
 #include "../commands/include/execute-logaritmo.h"
 #include "../commands/include/execute-arccoseno.h"
 #include "../commands/include/execute-arctan.h"
 #include "../commands/include/execute-swap.h"
->>>>>>> main
 #include "./include/context.h"
 
 void commandDispatch(Context* context) {
@@ -34,7 +30,6 @@ void commandDispatch(Context* context) {
     else if (isCommand(context, RESTA_COMMAND)) executeResta(context);
     else if (isCommand(context, SUMA_COMMAND)) executeSuma(context);
     else if (isCommand(context, MULTIPLICAR_COMMAND)) executeMultiplicar(context);
-<<<<<<< HEAD
     else if (isCommand(context, DIVIDIR_COMMAND)) executeDividir(context);
     else if (isCommand(context, RAIZ_COMMAND)) executeRaiz(context);
     else if (isCommand(context, POTENCIA_COMMAND)) executePotencia(context);
@@ -42,7 +37,6 @@ void commandDispatch(Context* context) {
     else if (isCommand(context, CIMA_COMMAND)) executeCima(context);
     else if (isCommand(context, DISPLAY_COMMAND)) executeDisplay(context);
     else if (isCommand(context, CLEAR_COMMAND)) executeClear(context);
-=======
     else if (isCommand(context, SENO_COMMAND)) executeSeno(context);
     else if (isCommand(context, COSENO_COMMAND)) executeCoseno(context);
     else if (isCommand(context, TANGENTE_COMMAND)) executeTangente(context);
@@ -51,7 +45,6 @@ void commandDispatch(Context* context) {
     else if (isCommand(context, ARCCOSENO_COMMAND)) executeArccoseno(context);
     else if (isCommand(context, ARCTAN_COMMAND)) executeArctan(context);
     else if (isCommand(context, SWAP_COMMAND)) executeSwap(context);
->>>>>>> main
 }
 
 int isCommand(Context* context, char* command) {
