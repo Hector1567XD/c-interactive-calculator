@@ -14,6 +14,12 @@
 #include "../commands/include/execute-hexadecimal.h"
 #include "../commands/include/execute-decimal.h"
 #include "../commands/include/execute-octal-to-decimal.h"
+#include "../commands/include/execute-coseno.h"
+#include "../commands/include/execute-tangente.h"
+#include "../commands/include/execute-logaritmo.h"
+#include "../commands/include/execute-arccoseno.h"
+#include "../commands/include/execute-arctan.h"
+#include "../commands/include/execute-swap.h"
 #include "./include/context.h"
 
 void commandDispatch(Context* context) {
@@ -25,6 +31,15 @@ void commandDispatch(Context* context) {
     else if (isCommand(context, DEC_HEXA_COMMAND)) executeHexadecimal(context);
     else if (isCommand(context, BINARY_DECIMAL_COMMAND)) executeDecimal(context);
     else if (isCommand(context, OCTAL_DECIMAL_COMMAND)) executeOctalToDecimal(context);
+    else if (isCommand(context, SENO_COMMAND)) executeSeno(context);
+    else if (isCommand(context, COSENO_COMMAND)) executeCoseno(context);
+    else if (isCommand(context, TANGENTE_COMMAND)) executeTangente(context);
+    else if (isCommand(context, LOGARITMO_COMMAND)) executeLogaritmo(context);
+    else if (isCommand(context, ARCSENO_COMMAND)) executeArcseno(context);
+    else if (isCommand(context, ARCCOSENO_COMMAND)) executeArccoseno(context);
+    else if (isCommand(context, ARCTAN_COMMAND)) executeArctan(context);
+    else if (isCommand(context, SWAP_COMMAND)) executeSwap(context);
+
 }
 
 int isCommand(Context* context, char* command) {
