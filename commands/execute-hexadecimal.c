@@ -35,7 +35,14 @@ void executeHexadecimal(Context* context)
       return;
     }
 
-    int numero = TomarCimaYDesapilar(context->numberStack);
+    int numero = Cima(context->numberStack);
+
+    if (numero < 0) {
+      context->error = NO_CAN_USE_NEGATIVES_ERROR;
+      return;
+    }
+
+    Desapilar(context->numberStack);
 
     integerDecimalToHexadecimal(numero, resultado);
     context->response = resultado;
