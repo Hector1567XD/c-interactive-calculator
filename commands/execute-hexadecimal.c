@@ -10,14 +10,14 @@
 
 void integerDecimalToHexadecimal(int decimalNumber, char hexadecimalString[45]) {
     int remainder;
-    int i, j = 0;
+    int i = 0;
     while (decimalNumber != 0) {
         remainder = decimalNumber % 16;
 
         if (remainder < 10)
-            hexadecimalString[j++] = 48 + remainder;
+            hexadecimalString[i++] = 48 + remainder;
         else
-            hexadecimalString[j++] = 55 + remainder;
+            hexadecimalString[i++] = 55 + remainder;
 
         decimalNumber /= 16;
     }
@@ -36,7 +36,7 @@ void executeHexadecimal(Context* context) {
     int numero = Cima(context->numberStack);
 
     if (numero < 0) {
-      context->error = NO_CAN_USE_NEGATIVES_ERROR;
+      context->error = NEGATIVE_NUMBER_ERROR;
       return;
     }
 

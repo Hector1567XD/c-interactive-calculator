@@ -23,7 +23,7 @@ void executeFactorial(Context* context) {
     double numero = Cima(context->numberStack);
 
     if (numero < 0){
-      context->error = NEGATIVE_ERROR;
+      context->error = NEGATIVE_NUMBER_ERROR;
       return;
     }
 

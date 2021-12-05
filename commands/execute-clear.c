@@ -10,7 +10,6 @@
 
 void executeClear(Context* context) {
     context->error = NO_ERRORS;
-    char * resultado = (char *) malloc(45);
 
     if (getPilaLongitud(context->numberStack) == 0) {
       context->error = INSUFICIENT_VALUES_ERROR;

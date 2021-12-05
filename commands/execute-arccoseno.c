@@ -9,7 +9,7 @@
 
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
-#define PI 3.14159265
+#include "../core/include/constants.h"
 
 void executeArccoseno(Context* context) {
     context->error = NO_ERRORS;
