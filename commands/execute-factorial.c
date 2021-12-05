@@ -27,7 +27,7 @@ void executeFactorial(Context* context)
       return;
     }
 
-    double ptr;
+    double waste;
     double decimal = modf(numeroA, &ptr);
 
     if (decimal != 0){ //revisar(?)
