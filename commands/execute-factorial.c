@@ -9,6 +9,8 @@
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 
+double factorial(double n);
+
 void executeFactorial(Context* context)
 {
     context->error = NO_ERRORS;
@@ -28,7 +30,7 @@ void executeFactorial(Context* context)
     }
 
     double waste;
-    double decimal = modf(numeroA, &waste);
+    double decimal = modf(numero, &waste);
 
     if (decimal != 0){ 
       context->error = DECIMAL_ERROR;

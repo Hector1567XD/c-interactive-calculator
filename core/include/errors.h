@@ -12,5 +12,10 @@
   #define DOMAIN_BETWEEN_ERROR 8
   #define DOMAIN_LOG_ERROR 9
   #define DOMAIN_TAN_ERROR 10
+  #define DIVIDED_BY_ZERO_ERROR 11
+  #define NEGATIVE_ERROR 12
+  #define DECIMAL_ERROR 13
+  #define ZERO_ERROR 14
+
 
 #endif
