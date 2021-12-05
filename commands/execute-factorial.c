@@ -22,13 +22,13 @@ void executeFactorial(Context* context)
 
     double numeroA = TomarCimaYDesapilar(context->numberStack);
 
-    if (numeroA < 0){ 
+    if (numeroA < 0){
       context->error = UNDEFINED;
       return;
     }
 
     double waste;
-    double decimal = modf(numeroA, &ptr);
+    double decimal = modf(numeroA, &waste);
 
     if (decimal != 0){ //revisar(?)
       context->error = UNDEFINED;
@@ -36,12 +36,12 @@ void executeFactorial(Context* context)
     }
 
     double factorial(double n){
-     if (n == 0){  
-       return 1;  
+     if (n == 0){
+       return 1;
      }
-     else{ 
+     else{
        return(n * factorial(n-1));
-     }   
+     }
     }
 
     double operacion = factorial(numeroA);

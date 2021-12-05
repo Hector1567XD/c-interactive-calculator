@@ -30,6 +30,6 @@ void executeLogaritmo(Context* context)
 
     Apilar(context->numberStack, operacion);
 
-    snprintf( resultado, 46, "%f", operacion );
+    snprintf( resultado, 46, "%g", operacion );
     context->response = resultado;
 }
