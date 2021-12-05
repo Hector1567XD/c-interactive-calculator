@@ -24,15 +24,15 @@ void executeDisplay(Context* context)
 
     for(i = 0; i < pilaSize; i++){
     
-    double numeroA = TomarCimaYDesapilar(context->numberStack);
-    array[i] = numeroA;
+    array[i] = TomarCimaYDesapilar(context->numberStack);
     
-    printf("%g\n",numeroA);
+    printf("%g\n",array[i]);
   }
 
    for(i = pilaSize - 1; i >= 0; i--){
 
     Apilar(context->numberStack, array[i]);
+
    } 
 
 }

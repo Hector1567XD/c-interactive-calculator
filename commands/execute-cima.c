@@ -19,12 +19,10 @@ void executeCima(Context* context)
       return;
     }
 
-    double numeroA = TomarCimaYDesapilar(context->numberStack);
+    double numero = TomarCimaYDesapilar(context->numberStack);
 
-    double operacion = numeroA;
+    Apilar(context->numberStack, numero);
 
-    Apilar(context->numberStack, operacion);
-
-    snprintf( resultado, 46, "%g", operacion );
+    snprintf( resultado, 46, "%g", numero);
     context->response = resultado;
 }
