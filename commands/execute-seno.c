@@ -5,15 +5,14 @@
 
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
+#include "../utils/include/string-formating-utils.h"
 
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 #define PI 3.14159265
 
-void executeSeno(Context* context)
-{
+void executeSeno(Context* context) {
     context->error = NO_ERRORS;
-    char * resultado = (char *) malloc(45);
 
     int pilaSize = getPilaLongitud(context->numberStack);
     if (pilaSize < 1) {
@@ -27,7 +26,5 @@ void executeSeno(Context* context)
     operacion = floor(10000000*operacion)/10000000;
 
     Apilar(context->numberStack, operacion);
-
-    snprintf( resultado, 46, "%g", operacion );
-    context->response = resultado;
+    context->response = formatDoubleToString("%g", operacion);
 }

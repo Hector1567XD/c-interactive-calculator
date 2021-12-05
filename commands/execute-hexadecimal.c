@@ -24,8 +24,7 @@ void integerDecimalToHexadecimal(int decimalNumber, char hexadecimalString[45]) 
     return;
 }
 
-void executeHexadecimal(Context* context)
-{
+void executeHexadecimal(Context* context) {
     context->error = NO_ERRORS;
     char * resultado = (char *) malloc(45);
 

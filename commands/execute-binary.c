@@ -21,8 +21,7 @@ int integerDecimalToBinary(int decimalNumber) {
   return binaryNumber;
 }
 
-void executeBinary(Context* context)
-{
+void executeBinary(Context* context) {
     context->error = NO_ERRORS;
 
     int pilaSize = getPilaLongitud(context->numberStack);
@@ -36,6 +35,5 @@ void executeBinary(Context* context)
     int operacion = integerDecimalToBinary(numero);
 
     Apilar(context->numberStack, operacion);
-
     context->response = formatDoubleToString("%g", operacion);
 }

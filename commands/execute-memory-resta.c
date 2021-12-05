@@ -4,6 +4,7 @@
 
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
+#include "../utils/include/string-formating-utils.h"
 
 #include "../core/include/commands.h"
 #include "../core/include/errors.h"
@@ -11,7 +12,6 @@
 
 void executeMemoryResta(Context* context) {
   context->error = NO_ERRORS;
-  char * resultado = (char *) malloc(45);
 
   if (getPilaLongitud(context->numberStack) < 1) {
     context->error = INSUFICIENT_VALUES_ERROR;
@@ -29,7 +29,5 @@ void executeMemoryResta(Context* context) {
   double operacion = memoryNumber - number;
 
   Apilar(context->memoryStack, operacion);
-
-  snprintf( resultado, 46, "%g", operacion );
-  context->response = resultado;
+  context->response = formatDoubleToString("%g", operacion);
 }

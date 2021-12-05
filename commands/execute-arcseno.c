@@ -11,8 +11,7 @@
 #include "../core/include/context.h"
 #define PI 3.14159265
 
-void executeArcseno(Context* context)
-{
+void executeArcseno(Context* context) {
     context->error = NO_ERRORS;
 
     int pilaSize = getPilaLongitud(context->numberStack);
@@ -32,6 +31,5 @@ void executeArcseno(Context* context)
     operacion = floor(10000000*operacion)/10000000;
 
     Apilar(context->numberStack, operacion);
-
     context->response = formatDoubleToString("%g", operacion);
 }

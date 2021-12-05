@@ -8,8 +8,7 @@
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 
-void executeClear(Context* context)
-{
+void executeClear(Context* context) {
     context->error = NO_ERRORS;
     char * resultado = (char *) malloc(45);
 

@@ -11,10 +11,9 @@
 #include "../core/include/context.h"
 #define PI 3.14159265
 
-void executeCoseno(Context* context)
-{
+void executeCoseno(Context* context) {
     context->error = NO_ERRORS;
-    
+
     int pilaSize = getPilaLongitud(context->numberStack);
     if (pilaSize < 1) {
       context->error = INSUFICIENT_VALUES_ERROR;
@@ -27,6 +26,5 @@ void executeCoseno(Context* context)
     operacion = floor(10000000*operacion)/10000000;
 
     Apilar(context->numberStack, operacion);
-
     context->response = formatDoubleToString("%g", operacion);
 }
