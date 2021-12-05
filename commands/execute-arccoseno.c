@@ -10,10 +10,16 @@
 #include "../core/include/context.h"
 #define PI 3.14159265
 
+char* formatDoubleToString(double number) {
+  char * resultado = (char *) malloc(45);
+  snprintf( resultado, 46, "%g", number );
+  return resultado;
+}
+
+
 void executeArccoseno(Context* context)
 {
     context->error = NO_ERRORS;
-    char * resultado = (char *) malloc(45);
 
     int pilaSize = getPilaLongitud(context->numberStack);
     if (pilaSize < 1) {
@@ -33,6 +39,5 @@ void executeArccoseno(Context* context)
 
     Apilar(context->numberStack, operacion);
 
-    snprintf( resultado, 46, "%g", operacion );
-    context->response = resultado;
+    context->response = formatDoubleToString(operacion);
 }
