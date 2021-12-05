@@ -23,6 +23,15 @@ int isValidInput(char input[]) {
     if (strcmp(input, CIMA_COMMAND) == 0) return TRUE;
     if (strcmp(input, DISPLAY_COMMAND) == 0) return TRUE;
     if (strcmp(input, CLEAR_COMMAND) == 0) return TRUE;
+    if (strcmp(input, MEMORY_STORE_COMMAND) == 0) return TRUE;
+    if (strcmp(input, MEMORY_RECALL_COMMAND) == 0) return TRUE;
+    if (strcmp(input, MEMORY_SUMA_COMMAND) == 0) return TRUE;
+    if (strcmp(input, MEMORY_RESTA_COMMAND) == 0) return TRUE;
+    if (strcmp(input, DEC_BINARY_COMMAND) == 0) return TRUE;
+    if (strcmp(input, DEC_OCTAL_COMMAND) == 0) return TRUE;
+    if (strcmp(input, DEC_HEXA_COMMAND) == 0) return TRUE;
+    if (strcmp(input, BINARY_DECIMAL_COMMAND) == 0) return TRUE;
+    if (strcmp(input, OCTAL_DECIMAL_COMMAND) == 0) return TRUE;
     if (strcmp(input, SENO_COMMAND) == 0) return TRUE;
     if (strcmp(input, COSENO_COMMAND) == 0) return TRUE;
     if (strcmp(input, TANGENTE_COMMAND) == 0) return TRUE;
@@ -31,11 +40,12 @@ int isValidInput(char input[]) {
     if (strcmp(input, ARCCOSENO_COMMAND) == 0) return TRUE;
     if (strcmp(input, ARCTAN_COMMAND) == 0) return TRUE;
     if (strcmp(input, SWAP_COMMAND) == 0) return TRUE;
+
     return FALSE;
 }
 
-char* getCommandByInput(char *input, int *error)
-{
+
+char* getCommandByInput(char *input, int *error) {
     *error = NO_ERRORS;
 
     if (!isValidInput(input)) {
@@ -55,6 +65,10 @@ char* getCommandByInput(char *input, int *error)
     if (strcmp(input, CIMA_COMMAND) == 0) return CIMA_COMMAND;
     if (strcmp(input, DISPLAY_COMMAND) == 0) return DISPLAY_COMMAND;
     if (strcmp(input, CLEAR_COMMAND) == 0) return CLEAR_COMMAND;
+    if (strcmp(input, MEMORY_STORE_COMMAND) == 0) return MEMORY_STORE_COMMAND;
+    if (strcmp(input, MEMORY_RECALL_COMMAND) == 0) return MEMORY_RECALL_COMMAND;
+    if (strcmp(input, MEMORY_SUMA_COMMAND) == 0) return MEMORY_SUMA_COMMAND;
+    if (strcmp(input, MEMORY_RESTA_COMMAND) == 0) return MEMORY_RESTA_COMMAND;
     if (strcmp(input, SENO_COMMAND) == 0) return SENO_COMMAND;
     if (strcmp(input, COSENO_COMMAND) == 0) return COSENO_COMMAND;
     if (strcmp(input, TANGENTE_COMMAND) == 0) return TANGENTE_COMMAND;
@@ -63,6 +77,11 @@ char* getCommandByInput(char *input, int *error)
     if (strcmp(input, ARCCOSENO_COMMAND) == 0) return ARCCOSENO_COMMAND;
     if (strcmp(input, ARCTAN_COMMAND) == 0) return ARCTAN_COMMAND;
     if (strcmp(input, SWAP_COMMAND) == 0) return SWAP_COMMAND;
+    if (strcmp(input, DEC_BINARY_COMMAND) == 0) return DEC_BINARY_COMMAND;
+    if (strcmp(input, DEC_OCTAL_COMMAND) == 0) return DEC_OCTAL_COMMAND;
+    if (strcmp(input, DEC_HEXA_COMMAND) == 0) return DEC_HEXA_COMMAND;
+    if (strcmp(input, BINARY_DECIMAL_COMMAND) == 0) return BINARY_DECIMAL_COMMAND;
+    if (strcmp(input, OCTAL_DECIMAL_COMMAND) == 0) return OCTAL_DECIMAL_COMMAND;
     if (isNumber(input)) return ADD_NUMERIC_VALUE;
 
     return IMPOSIBLE_COMMAND;
