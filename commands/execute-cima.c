@@ -19,9 +19,8 @@ void executeCima(Context* context)
       return;
     }
 
-    double numeroA = TomarCimaYDesapilar(context->numberStack);
-
-    double operacion = numeroA;
+    double numero = TomarCimaYDesapilar(context->numberStack);
+    double operacion = numero;
 
     Apilar(context->numberStack, operacion);
 
