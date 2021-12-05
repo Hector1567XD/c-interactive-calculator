@@ -26,8 +26,8 @@ void executeArcseno(Context* context)
       context->error = DOMAIN_BETWEEN_ERROR;
       return;
     }
-
     Desapilar(context->numberStack);
+
     double operacion = asin(numeroA)*(180.0/PI);
     operacion = floor(10000000*operacion)/10000000;
 

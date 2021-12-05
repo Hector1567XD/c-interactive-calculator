@@ -9,27 +9,51 @@
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 
-void executeLogaritmo(Context* context)
+double factorial(double n);
+
+void executeFactorial(Context* context)
 {
     context->error = NO_ERRORS;
     char * resultado = (char *) malloc(45);
 
     int pilaSize = getPilaLongitud(context->numberStack);
-    if (pilaSize < 1) {
+    if (pilaSize == 0) {
       context->error = INSUFICIENT_VALUES_ERROR;
       return;
     }
 
     double numero = Cima(context->numberStack);
-    if (numero <= 0) {
-      context->error = DOMAIN_LOG_ERROR;
+
+    if (numero < 0){ 
+      context->error = NEGATIVE_ERROR;
       return;
     }
 
-    double operacion = log10(numero);
+    double waste;
+    double decimal = modf(numero, &waste);
+
+    if (decimal != 0){ 
+      context->error = DECIMAL_ERROR;
+      return;
+    }
+
+    Desapilar(context->numberStack);
+
+    double operacion = factorial(numero);
 
     Apilar(context->numberStack, operacion);
 
     snprintf( resultado, 46, "%g", operacion );
     context->response = resultado;
+}
+
+double factorial(double n){
+  if (n == 0){  
+
+    return 1;  
+  }
+   else{   
+   
+    return(n * factorial(n-1));
+  }   
 }

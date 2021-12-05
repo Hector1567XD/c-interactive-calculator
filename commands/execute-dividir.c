@@ -1,37 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <math.h>
 
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
-#include "../utils/include/string-formating-utils.h"
 
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
-#define PI 3.14159265
 
-void executeArccoseno(Context* context)
+void executeDividir(Context* context)
 {
     context->error = NO_ERRORS;
+    char * resultado = (char *) malloc(45);
 
     int pilaSize = getPilaLongitud(context->numberStack);
-    if (pilaSize < 1) {
+    if (pilaSize < 2) {
       context->error = INSUFICIENT_VALUES_ERROR;
       return;
     }
 
     double numeroA = Cima(context->numberStack);
-    if ((numeroA < -1) || (numeroA >1)) {
-      context->error = DOMAIN_BETWEEN_ERROR;
+
+    if (numeroA == 0) {
+      context->error = DIVIDED_BY_ZERO_ERROR;
       return;
     }
-    Desapilar(context->numberStack);
 
-    double operacion = acos(numeroA)*(180.0/PI);
-    operacion = floor(10000000*operacion)/10000000;
+    numeroA = TomarCimaYDesapilar(context->numberStack);
+    double numeroB = TomarCimaYDesapilar(context->numberStack);
+
+    double operacion = numeroB / numeroA;
 
     Apilar(context->numberStack, operacion);
 
-    context->response = formatDoubleToString("%g", operacion);
+    snprintf( resultado, 46, "%g", operacion );
+    context->response = resultado;
 }
