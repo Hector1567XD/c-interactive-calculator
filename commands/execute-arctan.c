@@ -25,7 +25,6 @@ void executeArctan(Context* context)
     double operacion = atan(numeroA)*(180.0/PI);
     operacion = floor(10000000*operacion)/10000000;
 
-
     Apilar(context->numberStack, operacion);
 
     snprintf( resultado, 46, "%g", operacion );
