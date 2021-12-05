@@ -23,7 +23,7 @@ void executeArcseno(Context* context)
 
     double numeroA = Cima(context->numberStack);
     if ((numeroA < -1) || (numeroA >1)) {
-      context->error = DOMAIN_ERROR;
+      context->error = DOMAIN_BETWEEN_ERROR;
       return;
     }
 

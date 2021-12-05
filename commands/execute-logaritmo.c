@@ -22,7 +22,7 @@ void executeLogaritmo(Context* context)
 
     double numeroA = Cima(context->numberStack);
     if (numeroA <= 0) {
-      context->error = LOG_ERROR;
+      context->error = DOMAIN_LOG_ERROR;
       return;
     }
 
