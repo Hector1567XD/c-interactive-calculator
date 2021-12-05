@@ -6,7 +6,13 @@
 #define INVALID_COMMAND_ERROR 2
 
 #define INSUFICIENT_VALUES_ERROR 3
+<<<<<<< HEAD
 
 #define UNDEFINED 4
 
+=======
+#define DOMAIN_BETWEEN_ERROR 4
+#define DOMAIN_LOG_ERROR 5
+#define DOMAIN_TAN_ERROR 6
+>>>>>>> main
 #endif

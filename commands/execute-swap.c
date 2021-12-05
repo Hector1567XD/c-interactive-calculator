@@ -8,7 +8,7 @@
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 
-void executeSuma(Context* context)
+void executeSwap(Context* context)
 {
     context->error = NO_ERRORS;
     char * resultado = (char *) malloc(45);
@@ -22,10 +22,10 @@ void executeSuma(Context* context)
     double numeroA = TomarCimaYDesapilar(context->numberStack);
     double numeroB = TomarCimaYDesapilar(context->numberStack);
 
-    double operacion = numeroA + numeroB;
+    double auxiliar = numeroA;
+    numeroA = numeroB;
 
-    Apilar(context->numberStack, operacion);
+    Apilar(context->numberStack, auxiliar);
+    Apilar(context->numberStack, numeroA);
 
-    snprintf( resultado, 46, "%f", operacion );
-    context->response = resultado;
 }
