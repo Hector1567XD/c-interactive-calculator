@@ -19,20 +19,18 @@ void executeDisplay(Context* context)
       return;
     }
 
-    int i; 
+    int i;
     double array[pilaSize];
 
     for(i = 0; i < pilaSize; i++){
-    
-    double numeroA = TomarCimaYDesapilar(context->numberStack);
-    array[i] = numeroA;
-    
-    printf("%g\n",numeroA);
-  }
 
-   for(i = pilaSize - 1; i >= 0; i--){
+      double numero = TomarCimaYDesapilar(context->numberStack);
+      array[i] = numero;
 
-    Apilar(context->numberStack, array[i]);
-   } 
+      printf("%g\n",numero);
+    }
 
+    for(i = pilaSize - 1; i >= 0; i--){
+      Apilar(context->numberStack, array[i]);
+    }
 }
