@@ -19,13 +19,15 @@ void executeDividir(Context* context)
       return;
     }
 
-    double numeroA = TomarCimaYDesapilar(context->numberStack);
-    double numeroB = TomarCimaYDesapilar(context->numberStack);
+    double numeroA = Cima(context->numberStack);
 
     if (numeroA == 0) {
-      context->error = UNDEFINED;
+      context->error = DIVIDED_BY_ZERO_ERROR;
       return;
     }
+
+    numeroA = TomarCimaYDesapilar(context->numberStack);
+    double numeroB = TomarCimaYDesapilar(context->numberStack);
 
     double operacion = numeroB / numeroA;
 

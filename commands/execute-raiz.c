@@ -15,19 +15,26 @@ void executeRaiz(Context* context)
     char * resultado = (char *) malloc(45);
 
     int pilaSize = getPilaLongitud(context->numberStack);
+    
     if (pilaSize == 0) {
+     
       context->error = INSUFICIENT_VALUES_ERROR;
+      
       return;
     }
 
-    double numeroA = TomarCimaYDesapilar(context->numberStack);
+    double numero = Cima(context->numberStack);
 
-    if (numeroA < 0) { 
-      context->error = UNDEFINED;
+    if (numero < 0) { 
+      
+      context->error = NEGATIVE_ERROR;
+      
       return;
     }
 
-    double operacion = sqrt(numeroA);
+    Desapilar(context->numberStack);
+
+    double operacion = sqrt(numero);
 
     Apilar(context->numberStack, operacion);
 

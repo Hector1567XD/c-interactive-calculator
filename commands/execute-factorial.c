@@ -20,34 +20,38 @@ void executeFactorial(Context* context)
       return;
     }
 
-    double numeroA = TomarCimaYDesapilar(context->numberStack);
+    double numero = Cima(context->numberStack);
 
-    if (numeroA < 0){
-      context->error = UNDEFINED;
+    if (numero < 0){ 
+      context->error = NEGATIVE_ERROR;
       return;
     }
 
     double waste;
     double decimal = modf(numeroA, &waste);
 
-    if (decimal != 0){ //revisar(?)
-      context->error = UNDEFINED;
+    if (decimal != 0){ 
+      context->error = DECIMAL_ERROR;
       return;
     }
 
-    double factorial(double n){
-     if (n == 0){
-       return 1;
-     }
-     else{
-       return(n * factorial(n-1));
-     }
-    }
+    Desapilar(context->numberStack);
 
-    double operacion = factorial(numeroA);
+    double operacion = factorial(numero);
 
     Apilar(context->numberStack, operacion);
 
     snprintf( resultado, 46, "%g", operacion );
     context->response = resultado;
+}
+
+double factorial(double n){
+  if (n == 0){  
+
+    return 1;  
+  }
+   else{   
+   
+    return(n * factorial(n-1));
+  }   
 }

@@ -31,7 +31,6 @@ int isValidInput(char input[]) {
     if (strcmp(input, ARCCOSENO_COMMAND) == 0) return TRUE;
     if (strcmp(input, ARCTAN_COMMAND) == 0) return TRUE;
     if (strcmp(input, SWAP_COMMAND) == 0) return TRUE;
-
     return FALSE;
 }
 
@@ -39,7 +38,6 @@ char* getCommandByInput(char *input, int *error)
 {
     *error = NO_ERRORS;
 
-    // TODO: Simplificar esto
     if (!isValidInput(input)) {
         *error = INVALID_COMMAND_ERROR;
         return NO_COMMAND;
@@ -65,15 +63,7 @@ char* getCommandByInput(char *input, int *error)
     if (strcmp(input, ARCCOSENO_COMMAND) == 0) return ARCCOSENO_COMMAND;
     if (strcmp(input, ARCTAN_COMMAND) == 0) return ARCTAN_COMMAND;
     if (strcmp(input, SWAP_COMMAND) == 0) return SWAP_COMMAND;
-
     if (isNumber(input)) return ADD_NUMERIC_VALUE;
 
     return IMPOSIBLE_COMMAND;
 }
-
-/*
-    TODO:
-    int stringEqual(s1, s2) {
-        return (strcmp(s, "-") == 0);
-    }
-*/

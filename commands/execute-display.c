@@ -23,11 +23,8 @@ void executeDisplay(Context* context)
     double array[pilaSize];
 
     for(i = 0; i < pilaSize; i++){
-
-      double numero = TomarCimaYDesapilar(context->numberStack);
-      array[i] = numero;
-
-      printf("%g\n",numero);
+      array[i] = TomarCimaYDesapilar(context->numberStack);
+      printf("%g\n",array[i]);
     }
 
     for(i = pilaSize - 1; i >= 0; i--){
