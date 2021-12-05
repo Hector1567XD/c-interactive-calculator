@@ -8,4 +8,5 @@
 #define INSUFICIENT_VALUES_ERROR 3
 #define DOMAIN_ERROR 4
 #define LOG_ERROR 5
+#define DOMAIN_TAN_ERROR 6
 #endif

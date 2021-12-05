@@ -14,8 +14,14 @@ void executeLogaritmo(Context* context)
     context->error = NO_ERRORS;
     char * resultado = (char *) malloc(45);
 
-    double numeroA = TomarCimaYDesapilar(context->numberStack);
-    if (numeroA == 0) {
+    int pilaSize = getPilaLongitud(context->numberStack);
+    if (pilaSize < 1) {
+      context->error = INSUFICIENT_VALUES_ERROR;
+      return;
+    }
+
+    double numeroA = Cima(context->numberStack);
+    if (numeroA <= 0) {
       context->error = LOG_ERROR;
       return;
     }

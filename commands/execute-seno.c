@@ -15,9 +15,16 @@ void executeSeno(Context* context)
     context->error = NO_ERRORS;
     char * resultado = (char *) malloc(45);
 
+    int pilaSize = getPilaLongitud(context->numberStack);
+    if (pilaSize < 1) {
+      context->error = INSUFICIENT_VALUES_ERROR;
+      return;
+    }
+
     double numeroA = TomarCimaYDesapilar(context->numberStack);
 
     double operacion = sin(numeroA*(PI/180.0));
+    operacion = floor(10000000*operacion)/10000000;
 
     Apilar(context->numberStack, operacion);
 

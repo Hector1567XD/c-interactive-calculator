@@ -28,7 +28,4 @@ void executeSwap(Context* context)
     Apilar(context->numberStack, auxiliar);
     Apilar(context->numberStack, numeroA);
 
-
-    //snprintf( resultado, 46, "%f", operacion );
-    //context->response = resultado;
 }
