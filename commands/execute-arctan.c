@@ -9,7 +9,7 @@
 
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
-#include "../core/include/constants.h"
+#include "../core/include/constans.h"
 
 void executeArctan(Context* context) {
     context->error = NO_ERRORS;
