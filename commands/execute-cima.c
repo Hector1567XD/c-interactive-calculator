@@ -12,8 +12,7 @@
 void executeCima(Context* context) {
     context->error = NO_ERRORS;
 
-    int pilaSize = getPilaLongitud(context->numberStack);
-    if (pilaSize == 0) {
+    if (getPilaLongitud(context->numberStack) == 0) {
       context->error = INSUFICIENT_VALUES_ERROR;
       return;
     }

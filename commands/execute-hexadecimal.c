@@ -28,8 +28,7 @@ void executeHexadecimal(Context* context) {
     context->error = NO_ERRORS;
     char * resultado = (char *) malloc(45);
 
-    int pilaSize = getPilaLongitud(context->numberStack);
-    if (pilaSize < 1) {
+    if (getPilaLongitud(context->numberStack) < 1) {
       context->error = INSUFICIENT_VALUES_ERROR;
       return;
     }

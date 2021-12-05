@@ -13,8 +13,7 @@ void executeDividir(Context* context)
 {
     context->error = NO_ERRORS;
 
-    int pilaSize = getPilaLongitud(context->numberStack);
-    if (pilaSize < 2) {
+    if (getPilaLongitud(context->numberStack) < 2) {
       context->error = INSUFICIENT_VALUES_ERROR;
       return;
     }

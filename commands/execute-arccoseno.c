@@ -14,8 +14,7 @@
 void executeArccoseno(Context* context) {
     context->error = NO_ERRORS;
 
-    int pilaSize = getPilaLongitud(context->numberStack);
-    if (pilaSize < 1) {
+    if (getPilaLongitud(context->numberStack) < 1) {
       context->error = INSUFICIENT_VALUES_ERROR;
       return;
     }

@@ -12,15 +12,13 @@
 void executeSuma(Context* context) {
     context->error = NO_ERRORS;
 
-    int pilaSize = getPilaLongitud(context->numberStack);
-    if (pilaSize < 2) {
+    if (getPilaLongitud(context->numberStack) < 2) {
       context->error = INSUFICIENT_VALUES_ERROR;
       return;
     }
 
     double numeroA = TomarCimaYDesapilar(context->numberStack);
     double numeroB = TomarCimaYDesapilar(context->numberStack);
-
     double operacion = numeroA + numeroB;
 
     Apilar(context->numberStack, operacion);
