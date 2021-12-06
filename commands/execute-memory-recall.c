@@ -13,7 +13,7 @@
 void executeMemoryRecall(Context* context) {
   context->error = NO_ERRORS;
 
-  if (getPilaLongitud(context->numberStack) < 1) {
+  if (getPilaLongitud(context->memoryStack) < 1) {
     context->error = INSUFICIENT_VALUES_IN_MEMORY_ERROR;
     return;
   }

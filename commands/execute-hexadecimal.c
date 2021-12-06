@@ -43,5 +43,16 @@ void executeHexadecimal(Context* context) {
     Desapilar(context->numberStack);
 
     integerDecimalToHexadecimal(numero, resultado);
+   
+    int i;
+    int longitud = strlen(resultado);
+    char aux;
+ 
+    for(i = 0; i < longitud/2; i++){
+      aux = resultado[i];
+      resultado[i] = resultado[longitud-i-1];
+      resultado[longitud-i-1] = aux;
+    }
+
     context->response = resultado;
 }
