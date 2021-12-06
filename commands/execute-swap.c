@@ -19,6 +19,6 @@ void executeSwap(Context* context) {
     double numeroA = TomarCimaYDesapilar(context->numberStack);
     double numeroB = TomarCimaYDesapilar(context->numberStack);
 
-    Apilar(context->numberStack, numeroB);
     Apilar(context->numberStack, numeroA);
+    Apilar(context->numberStack, numeroB);
 }
