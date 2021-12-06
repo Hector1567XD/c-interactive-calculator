@@ -8,6 +8,8 @@
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 
+void strrev(char *str);
+
 void integerDecimalToHexadecimal(int decimalNumber, char hexadecimalString[45]) {
     int remainder;
     int i = 0;
@@ -44,15 +46,18 @@ void executeHexadecimal(Context* context) {
 
     integerDecimalToHexadecimal(numero, resultado);
    
-    int i;
-    int longitud = strlen(resultado);
-    char aux;
- 
-    for(i = 0; i < longitud/2; i++){
-      aux = resultado[i];
-      resultado[i] = resultado[longitud-i-1];
-      resultado[longitud-i-1] = aux;
-    }
+    strrev(resultado);
 
     context->response = resultado;
+}
+
+void strrev(char *str){
+    int i;
+    int longitud = strlen(str);
+    char aux;
+    for(i = 0; i < longitud/2; i++){
+        aux = str[i];
+        str[i] = str[longitud-i-1];
+        str[longitud-i-1] = aux;
+    }   
 }
