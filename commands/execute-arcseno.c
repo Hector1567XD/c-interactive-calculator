@@ -5,18 +5,16 @@
 
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
+#include "../utils/include/string-formating-utils.h"
 
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
-#define PI 3.14159265
+#include "../core/include/constans.h"
 
-void executeArcseno(Context* context)
-{
+void executeArcseno(Context* context) {
     context->error = NO_ERRORS;
-    char * resultado = (char *) malloc(45);
 
-    int pilaSize = getPilaLongitud(context->numberStack);
-    if (pilaSize < 1) {
+    if (getPilaLongitud(context->numberStack) < 1) {
       context->error = INSUFICIENT_VALUES_ERROR;
       return;
     }
@@ -32,7 +30,5 @@ void executeArcseno(Context* context)
     operacion = floor(10000000*operacion)/10000000;
 
     Apilar(context->numberStack, operacion);
-
-    snprintf( resultado, 46, "%g", operacion );
-    context->response = resultado;
+    context->response = formatDoubleToString("%g", operacion);
 }

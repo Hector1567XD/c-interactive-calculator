@@ -26,13 +26,17 @@
 #include "../commands/include/execute-hexadecimal.h"
 #include "../commands/include/execute-decimal.h"
 #include "../commands/include/execute-octal-to-decimal.h"
+#include "../commands/include/execute-seno.h"
 #include "../commands/include/execute-coseno.h"
 #include "../commands/include/execute-tangente.h"
 #include "../commands/include/execute-logaritmo.h"
+#include "../commands/include/execute-arcseno.h"
 #include "../commands/include/execute-arccoseno.h"
 #include "../commands/include/execute-arctan.h"
 #include "../commands/include/execute-swap.h"
 #include "./include/context.h"
+
+int isCommand(Context* context, char* command);
 
 void commandDispatch(Context* context) {
     if (isCommand(context, ADD_NUMERIC_VALUE)) addNumericValue(context);

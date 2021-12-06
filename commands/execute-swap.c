@@ -8,13 +8,10 @@
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 
-void executeSwap(Context* context)
-{
+void executeSwap(Context* context) {
     context->error = NO_ERRORS;
-    char * resultado = (char *) malloc(45);
 
-    int pilaSize = getPilaLongitud(context->numberStack);
-    if (pilaSize < 2) {
+    if (getPilaLongitud(context->numberStack) < 2) {
       context->error = INSUFICIENT_VALUES_ERROR;
       return;
     }
@@ -22,10 +19,6 @@ void executeSwap(Context* context)
     double numeroA = TomarCimaYDesapilar(context->numberStack);
     double numeroB = TomarCimaYDesapilar(context->numberStack);
 
-    double auxiliar = numeroA;
-    numeroA = numeroB;
-
-    Apilar(context->numberStack, auxiliar);
     Apilar(context->numberStack, numeroA);
-
+    Apilar(context->numberStack, numeroB);
 }

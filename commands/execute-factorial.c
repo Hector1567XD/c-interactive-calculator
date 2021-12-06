@@ -5,34 +5,32 @@
 
 #include "../utils/include/booleans.h"
 #include "../utils/include/pila.h"
+#include "../utils/include/string-formating-utils.h"
 
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 
 double factorial(double n);
 
-void executeFactorial(Context* context)
-{
+void executeFactorial(Context* context) {
     context->error = NO_ERRORS;
-    char * resultado = (char *) malloc(45);
 
-    int pilaSize = getPilaLongitud(context->numberStack);
-    if (pilaSize == 0) {
+    if (getPilaLongitud(context->numberStack) == 0) {
       context->error = INSUFICIENT_VALUES_ERROR;
       return;
     }
 
     double numero = Cima(context->numberStack);
 
-    if (numero < 0){ 
-      context->error = NEGATIVE_ERROR;
+    if (numero < 0){
+      context->error = NEGATIVE_NUMBER_ERROR;
       return;
     }
 
     double waste;
     double decimal = modf(numero, &waste);
 
-    if (decimal != 0){ 
+    if (decimal != 0){
       context->error = DECIMAL_ERROR;
       return;
     }
@@ -42,18 +40,16 @@ void executeFactorial(Context* context)
     double operacion = factorial(numero);
 
     Apilar(context->numberStack, operacion);
-
-    snprintf( resultado, 46, "%g", operacion );
-    context->response = resultado;
+    context->response = formatDoubleToString("%g", operacion);
 }
 
-double factorial(double n){
-  if (n == 0){  
+double factorial(double n) {
+  if (n == 0){
 
-    return 1;  
+    return 1;
   }
-   else{   
-   
+   else{
+
     return(n * factorial(n-1));
-  }   
+  }
 }

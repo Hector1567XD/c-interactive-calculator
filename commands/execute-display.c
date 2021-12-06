@@ -8,10 +8,8 @@
 #include "../core/include/errors.h"
 #include "../core/include/context.h"
 
-void executeDisplay(Context* context)
-{
+void executeDisplay(Context* context) {
     context->error = NO_ERRORS;
-    char * resultado = (char *) malloc(45);
 
     int pilaSize = getPilaLongitud(context->numberStack);
     if (pilaSize == 0) {
